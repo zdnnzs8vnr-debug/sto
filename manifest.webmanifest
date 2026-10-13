@@ -1,0 +1,16 @@
+{
+  "name": "GUSTAVOEURO",
+  "short_name": "GUSTAVOEURO",
+  "description": "Banconote Euro Grade AAA+ · PayPal anonimo · Crypto",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#05060d",
+  "theme_color": "#05060d",
+  "orientation": "portrait-primary",
+  "lang": "it",
+  "icons": [
+    { "src": "note10.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "note10.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
