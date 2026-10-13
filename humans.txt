@@ -1,0 +1,11 @@
+/* TEAM */
+  Operator: GUSTAVOEURO
+  Contact: https://t.me/gustavoeuro
+  Channel: https://t.me/+gBf54xWnFapjMmRh
+  Onion: gustavoeuro7x2k.onion
+  PGP: 7B3F 9A21 C4E8 5D06 1F77 8AC2 30B9 4E11
+
+/* SITE */
+  Standards: HTML5, CSS3, ES5+
+  Stack: React 18, Babel standalone, Tailwind CDN, hash router
+  Est: 2022
