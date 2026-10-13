@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /sw.js
+Disallow: /.well-known/
+
+Sitemap: https://zdnnzs8vnr-debug.github.io/sitemap.xml
