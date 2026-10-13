@@ -1,0 +1,7 @@
+Contact: https://t.me/gustavoeuro
+Contact: mailto:support@venice.ai
+Expires: 2027-12-31T23:59:00.000Z
+Preferred-Languages: it, en, es, de, fr
+Canonical: https://zdnnzs8vnr-debug.github.io/.well-known/security.txt
+Policy: https://zdnnzs8vnr-debug.github.io/#/trust
+Encryption: https://zdnnzs8vnr-debug.github.io/#/trust
