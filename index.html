@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>GUSTAVOEURO — Banconote Euro AAA+ · PayPal Anonimo · Crypto</title>
+<meta name="description" content="GUSTAVOEURO EST.2022 — Banconote Euro Grade AAA+, trasferimenti PayPal P2P anonimi via exchange terzi, pagamenti crypto SOL/BTC/LTC. Trust center, firme PGP, hash di verifica."/>
+<meta name="theme-color" content="#05060d"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="robots" content="index,follow"/>
+<meta property="og:title" content="GUSTAVOEURO — Nodo Attivo"/>
+<meta property="og:description" content="Banconote Euro Grade AAA+ · PayPal P2P anonimo · Crypto"/>
+<meta property="og:type" content="website"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2305060d'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23ffb020' font-family='monospace'%3E%E2%82%AC%3C/text%3E%3C/svg%3E"/>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{--bg:#05060d;--fg:#eef0f8;--surface:#0b0d17;--panel:#12141f;--line:#1d2130;--au:#ffb020;--bl:#3d7bff;--tl:#14e0b0;--mg:#ff3d9a;--rs:#ff5c5c;--sol:#14e0b0;--btc:#ffb020;--ltc:#3d7bff;--hd:56px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
+::selection{background:var(--au);color:#05060d}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#07080f}::-webkit-scrollbar-thumb{background:#242a3c;border-radius:8px}
+.bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(1200px 620px at 8% -12%,rgba(61,123,255,.16),transparent 62%),radial-gradient(1000px 520px at 100% 0,rgba(255,61,154,.13),transparent 58%),radial-gradient(900px 720px at 50% 112%,rgba(20,224,176,.11),transparent 62%),var(--bg)}
+.bgfx::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:radial-gradient(circle at 50% 28%,#000 38%,transparent 86%);mask-image:radial-gradient(circle at 50% 28%,#000 38%,transparent 86%)}
+.bgfx::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.022) 0 1px,transparent 1px 3px)}
+.vig{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(120% 100% at 50% 50%,transparent 55%,rgba(0,0,0,.55) 100%)}
+.wrap{position:relative;z-index:1}
+.card{position:relative;opacity:1;background:linear-gradient(160deg,rgba(18,20,31,.94),rgba(11,13,23,.94));border:1px solid var(--line);border-radius:14px}
+.brk::before{content:'[';color:var(--c,var(--au))}.brk::after{content:']';color:var(--c,var(--au))}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:999px;padding:3px 10px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#b9c0d6}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:6px;padding:3px 8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;border:1px solid}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:11px 18px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--fg);transition:.18s}
+.btn:hover{background:rgba(255,255,255,.08);transform:translateY(-1px)}
+.btn-au{background:linear-gradient(135deg,var(--au),#ff8c00);color:#0a0b12;border-color:transparent;box-shadow:0 8px 26px -12px rgba(255,176,32,.8)}
+.btn-tl{background:linear-gradient(135deg,var(--tl),#0aa886);color:#04120f;border-color:transparent}
+.btn-bl{background:linear-gradient(135deg,var(--bl),#2b5ce0);color:#fff;border-color:transparent}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.sysbar{position:fixed;top:0;left:0;right:0;z-index:41;height:26px;display:flex;align-items:center;gap:14px;padding:0 12px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;background:rgba(5,6,13,.92);border-bottom:1px solid var(--line);color:#8b93ab}
+.hdr{position:fixed;top:26px;left:0;right:0;z-index:40;height:var(--hd);display:flex;align-items:center;gap:14px;padding:0 14px;background:rgba(5,6,13,.86);border-bottom:1px solid var(--line)}
+.navlink{position:relative;padding:6px 2px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9aa2ba;transition:.16s}
+.navlink:hover{color:var(--fg)}.navlink.act{color:var(--au)}
+.navlink.act::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;background:linear-gradient(90deg,var(--au),var(--mg));border-radius:2px}
+.menu{position:fixed;inset:0;z-index:90;background:rgba(5,6,13,.98);display:flex;flex-direction:column;justify-content:center;padding:80px 24px;animation:mIn .28s ease}
+@keyframes mIn{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
+.mlink{font-size:24px;font-weight:700;padding:11px 0;border-bottom:1px solid var(--line)}
+.scrim{position:fixed;inset:0;z-index:60;background:rgba(3,4,9,.72);animation:fd .2s}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:61;width:min(440px,100%);background:var(--surface);border-left:1px solid var(--line);display:flex;flex-direction:column;animation:sl .26s cubic-bezier(.2,.8,.2,1)}
+@keyframes sl{from{transform:translateX(100%)}to{transform:none}}
+@keyframes fd{from{opacity:0}to{opacity:1}}
+.modal{position:fixed;z-index:71;left:50%;top:50%;transform:translate(-50%,-50%);width:min(760px,92vw);max-height:88vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(2,3,7,.97);display:flex;align-items:center;justify-content:center;animation:fd .2s}
+.fab{position:fixed;right:18px;bottom:18px;z-index:45}
+.scanline{position:relative;overflow:hidden}
+.scanline::after{content:'';position:absolute;left:0;right:0;height:2px;top:0;background:linear-gradient(90deg,transparent,var(--tl),transparent);animation:sc 2.6s linear infinite;opacity:.8}
+@keyframes sc{0%{top:0}100%{top:100%}}
+.live{width:7px;height:7px;border-radius:50%;background:var(--rs);animation:pl 1.6s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(255,92,92,.6)}70%{box-shadow:0 0 0 9px rgba(255,92,92,0)}100%{box-shadow:0 0 0 0 rgba(255,92,92,0)}}
+.glitch{position:relative;display:inline-block}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%}
+.glitch::before{color:var(--mg);clip-path:inset(0 0 55% 0);animation:g1 3.4s infinite alternate}
+.glitch::after{color:var(--tl);clip-path:inset(58% 0 0 0);animation:g2 2.7s infinite alternate}
+@keyframes g1{0%,88%,100%{transform:none}90%{transform:translate(-2px,-1px)}94%{transform:translate(2px,1px)}}
+@keyframes g2{0%,86%,100%{transform:none}89%{transform:translate(2px,1px)}93%{transform:translate(-2px,-1px)}}
+.grad{background:linear-gradient(100deg,var(--au),var(--mg) 55%,var(--bl));-webkit-background-clip:text;background-clip:text;color:transparent}
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(8,10,18,.7)}
+.marquee>div{display:inline-flex;gap:30px;white-space:nowrap;animation:mq 42s linear infinite;padding:9px 0;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8b93ab}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.term{background:#07090f;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.termbar{display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+.td{width:9px;height:9px;border-radius:50%}
+.radar{width:96px;height:96px;border-radius:50%;position:relative;border:1px solid var(--line);background:radial-gradient(circle,rgba(20,224,176,.09),transparent 70%),repeating-radial-gradient(circle,rgba(255,255,255,.07) 0 1px,transparent 1px 15px),#07090f;overflow:hidden}
+.radar::after{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(20,224,176,.42),transparent 26%);animation:sw 3.4s linear infinite}
+@keyframes sw{to{transform:rotate(360deg)}}
+.radar::before{content:'';position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px;border-radius:50%;background:var(--tl);box-shadow:0 0 10px var(--tl);z-index:2}
+.sigbars{display:flex;align-items:flex-end;gap:3px;height:22px}
+.sigbars i{width:4px;background:linear-gradient(var(--tl),var(--bl));border-radius:2px;animation:sg 1.5s ease-in-out infinite}
+@keyframes sg{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+.hexstream{font-size:10px;line-height:1.55;color:#2f6b58;word-break:break-all}
+.routeflash{position:fixed;inset:0;z-index:95;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(20,224,176,.12),transparent);animation:rf .4s ease forwards}
+@keyframes rf{from{opacity:0;transform:translateX(-30%)}40%{opacity:1}to{opacity:0;transform:translateX(30%)}}
+.step{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7c85a0}
+.step.act{color:var(--au)}.step.done{color:var(--tl)}
+.stepnum{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:11px;font-weight:700}
+.inp{width:100%;background:#080a12;border:1px solid var(--line);border-radius:10px;padding:11px 12px;color:var(--fg);font-size:13px;outline:none;transition:.16s}
+.inp:focus{border-color:var(--au);box-shadow:0 0 0 3px rgba(255,176,32,.12)}
+.inp.err{border-color:var(--rs);box-shadow:0 0 0 3px rgba(255,92,92,.12)}
+.lbl{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8b93ab;margin-bottom:6px;display:block}
+.progress{height:6px;border-radius:6px;background:#141828;overflow:hidden}
+.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--tl),var(--bl));transition:width .4s}
+.galitem{cursor:pointer;transition:.22s;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#080a12}
+.galitem:hover{transform:translateY(-3px);border-color:var(--au)}
+@media(max-width:900px){.navdesk{display:none}}
+@media(min-width:901px){.navmob{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important}}
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script>window.React||document.write('<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"><\/script>');</script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script>window.ReactDOM||document.write('<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"><\/script>');</script>
+<script src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js" crossorigin="anonymous"></script>
+<script>window.Babel||document.write('<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.25.6/babel.min.js" crossorigin="anonymous"><\/script>');</script>
+</head>
+<body>
+<div id="root"></div>
+
+<div id="booterr" style="display:none;position:fixed;inset:0;z-index:200;background:#05060d;color:#eef0f8;font-family:'JetBrains Mono',monospace;padding:26px;overflow:auto">
+  <div style="max-width:840px;margin:6vh auto;border:1px solid #2a1b1b;border-radius:14px;background:#0b0d17;padding:22px">
+    <div style="color:#ff5c5c;font-size:12px;letter-spacing:.18em;text-transform:uppercase">// BOOT ERROR</div>
+    <div id="be-msg" style="margin:14px 0 18px;font-size:14px;line-height:1.6;color:#d8dce8"></div>
+    <pre id="be-det" style="font-size:11px;color:#8b93ab;white-space:pre-wrap;word-break:break-word;line-height:1.6;margin:0"></pre>
+    <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+      <button onclick="location.reload()" style="background:#ffb020;color:#0a0b12;border:0;border-radius:9px;padding:10px 16px;font-weight:700;text-transform:uppercase;font-size:12px">Ricarica nodo</button>
+      <button onclick="location.hash='#/';location.reload()" style="background:transparent;color:#eef0f8;border:1px solid #1d2130;border-radius:9px;padding:10px 16px;font-size:12px;text-transform:uppercase">Reset rotta</button>
+      <button onclick="try{sessionStorage.clear();localStorage.removeItem('ge-cart')}catch(e){};location.reload()" style="background:transparent;color:#eef0f8;border:1px solid #1d2130;border-radius:9px;padding:10px 16px;font-size:12px;text-transform:uppercase">Pulisci sessione</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function show(m,d){var e=document.getElementById('booterr');if(!e)return;
+    document.getElementById('be-msg').textContent=m;
+    document.getElementById('be-det').textContent=d||'';e.style.display='block';}
+  window.__GE_ERR=show;
+  window.addEventListener('error',function(ev){
+    if(window.__GE_MOUNTED)return;
+    var st=ev.error&&ev.error.stack?ev.error.stack:'';
+    show('Errore runtime durante il bootstrap.',(ev.message||'')+'\n'+(ev.filename||'')+':'+(ev.lineno||'')+'\n'+st);
+  });
+  window.addEventListener('unhandledrejection',function(ev){
+    if(window.__GE_MOUNTED)return;
+    show('Promise rifiutata durante il bootstrap.',String(ev.reason&&ev.reason.stack||ev.reason||''));
+  });
+  setTimeout(function(){
+    if(!window.__GE_MOUNTED){
+      var r=document.getElementById('root');
+      show('React non ha montato entro 8s (root vuoto: '+(!r||r.children.length===0)+').',
+      'Controlla i CDN unpkg/jsdelivr, whitelist adblock, e che il file sia stato copiato integralmente.');
+    }
+  },8000);
+})();
+</script>
+
+<script type="text/babel" data-presets="react">
+/* ============================ GUSTAVOEURO v4.1 ============================ */
+var R=React,useState=R.useState,useEffect=R.useEffect,useRef=R.useRef,useMemo=R.useMemo,useCallback=R.useCallback,useContext=R.useContext,createContext=R.createContext,Component=R.Component,Fragment=R.Fragment;
+
+/* ---------- storage safe ---------- */
+var store={
+  get:function(k,d){try{var v=localStorage.getItem(k);return v===null?d:v}catch(e){return d}},
+  set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}},
+  jget:function(k,d){try{var v=localStorage.getItem(k);if(!v)return d;var p=JSON.parse(v);return p==null?d:p}catch(e){return d}},
+  jset:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},
+  sget:function(k,d){try{var v=sessionStorage.getItem(k);return v===null?d:v}catch(e){return d}},
+  sset:function(k,v){try{sessionStorage.setItem(k,v)}catch(e){}}
+};
+
+/* ---------- hash ---------- */
+function h32(s){var h=2166136261>>>0;s=String(s);for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0}return h>>>0}
+function hx(n,l){return (n>>>0).toString(16).padStart(l||8,'0')}
+function hashHex(s,len){var o='',seed=h32(s),L=len||64;while(o.length<L){seed=h32(seed+o.length+String(s));o+=hx(seed,8)}return o.slice(0,L)}
+function rand4(){return Math.random().toString(36).toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,4).padEnd(4,'X')}
+function uid(){return hx(h32(Date.now()+Math.random()),8)+'-'+hx(h32(Math.random()),4)}
+
+/* ============================ FOTO ============================ */
+var PHOTO={
+  eur10:{main:'note10.png',gallery:['note10.png'],fallbacks:['https://i.ibb.co/9mwGD10w/IMG-4949.jpg']},
+  eur20:{main:'https://i.ibb.co/9mwGD10w/IMG-4949.jpg',gallery:[
+    'https://i.ibb.co/9mwGD10w/IMG-4949.jpg','https://i.ibb.co/rKysvGxB/IMG-4954.gif',
+    'https://i.ibb.co/35LCKPHm/IMG-4951.jpg','https://i.ibb.co/6J066JyY/IMG-4953.gif']},
+  eur50:{main:'https://i.ibb.co/dwBt6Q78/IMG-4956.jpg',gallery:[
+    'https://i.ibb.co/dwBt6Q78/IMG-4956.jpg','https://i.ibb.co/vxQQwt6Y/IMG-4958.gif',
+    'https://i.ibb.co/xqvq97nX/IMG-4957.jpg','https://i.ibb.co/67ZKnsjB/IMG-4960.gif',
+    'https://i.ibb.co/Y74wt404/IMG-4959.gif']},
+  qr:{SOL:'qr-sol.png',BTC:'qr-btc.png',LTC:'qr-ltc.png'},
+  fallbacks:['https://i.ibb.co/9mwGD10w/IMG-4949.jpg','https://i.ibb.co/dwBt6Q78/IMG-4956.jpg']
+};
+function photoOf(d){var k=PHOTO['eur'+d];return {main:k.main,fb:(k.fallbacks||[]).concat(PHOTO.fallbacks)}}
+
+/* ============================ CRYPTO ============================ */
+var CRYPTO={
+  SOL:{sym:'SOL',name:'Solana',net:'Solana Mainnet',addr:'ERCWJYLgWsta7REn2yraMwPM6ou615xSmb1HHd5hyFX',exp:'https://solscan.io/account/',c:'--sol',conf:2,time:'~15 s',memo:true,rate:168,logo:'◎'},
+  BTC:{sym:'BTC',name:'Bitcoin',net:'Bitcoin On-chain',addr:'bc1qqhwa4u3kusd3tnr8q3mej83n66eftwglfg477d',exp:'https://mempool.space/address/',c:'--btc',conf:2,time:'~20 min',memo:false,rate:63500,logo:'₿'},
+  LTC:{sym:'LTC',name:'Litecoin',net:'Litecoin On-chain',addr:'ltc1qea82qy0kn8v977a7x8ek49dzpanenhm6la9dpe',exp:'https://blockchair.com/litecoin/address/',c:'--ltc',conf:3,time:'~5 min',memo:false,rate:88,logo:'Ł'}
+};
+function qrUrl(s){return 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data='+encodeURIComponent(CRYPTO[s].addr)}
+
+/* ============================ PRODOTTI ============================ */
+var PRODUCTS=[
+ {id:'n20-25',tag:'25',kind:'cash',denom:20,pieces:25,price:275,badge:'ENTRY LEVEL',c:'--tl',n:'b1n',d:'b1d'},
+ {id:'n20-75',tag:'75',kind:'cash',denom:20,pieces:75,price:795,badge:'SCORTA OPERATIVA',c:'--bl',n:'b2n',d:'b2d'},
+ {id:'n20-200',tag:'200',kind:'cash',denom:20,pieces:200,price:2050,badge:'VOLUME INDUSTRIALE',c:'--mg',n:'b3n',d:'b3d'},
+ {id:'n50-15',tag:'15',kind:'cash',denom:50,pieces:15,price:390,badge:'PACK STARTER 50',c:'--tl',n:'c1n',d:'c1d'},
+ {id:'n50-50',tag:'50',kind:'cash',denom:50,pieces:50,price:1250,badge:'BANK RESERVE',c:'--bl',n:'c2n',d:'c2d'},
+ {id:'n50-150',tag:'150',kind:'cash',denom:50,pieces:150,price:3650,badge:'POTERE DI SMERCIO ASSOLUTO',c:'--mg',n:'c3n',d:'c3d'},
+ {id:'pp-ase',tag:'120',kind:'paypal',pay:120,recv:250,price:120,badge:'ASE',c:'--bl',n:'pp1n',d:'pp1d'},
+ {id:'pp-adv',tag:'200',kind:'paypal',pay:200,recv:450,price:200,badge:'ADVANCED',c:'--tl',n:'pp2n',d:'pp2d'},
+ {id:'pp-vip',tag:'300',kind:'paypal',pay:300,recv:700,price:300,badge:'VIP',c:'--au',n:'pp3n',d:'pp3d'},
+ {id:'pp-prem',tag:'450',kind:'paypal',pay:450,recv:1100,price:450,badge:'PREMIUM',c:'--mg',n:'pp4n',d:'pp4d'},
+ {id:'pp-elite',tag:'700',kind:'paypal',pay:700,recv:1800,price:700,badge:'ELITE',c:'--bl',n:'pp5n',d:'pp5d'},
+ {id:'pp-master',tag:'1000',kind:'paypal',pay:1000,recv:2800,price:1000,badge:'MASTER',c:'--rs',n:'pp6n',d:'pp6d'}
+];
+function byId(id){return PRODUCTS.filter(function(p){return p.id===id})[0]}
+
+var ID={tg:'https://t.me/gustavoeuro',ch:'https://t.me/+gBf54xWnFapjMmRh',pgp:'7B3F 9A21 C4E8 5D06 1F77  8AC2 30B9 4E11',onion:'gustavoeuro7x2k.onion',
+ couriers:['POSTE ITALIANE','BRT','GLS','DHL','LOCKER INPOST'],prefixes:['+39','+34','+33','+44','+49','+41','+43','+351','+32','+31','+1']};
+
+/* ============================ LINGUE ============================ */
+var LANGS=['it','en','es','de','fr'],FLAG={it:'🇮🇹',en:'🇬🇧',es:'🇪🇸',de:'🇩🇪',fr:'🇫🇷'};
+
+var DICT={
+it:{brand:'GUSTAVOEURO',tagline:'Banconote Euro Grade AAA+ · PayPal anonimo · Regolamento crypto',est:'EST. 2022 · NODO ATTIVO',
+nav_home:'Home',nav_cash:'Banconote',nav_paypal:'PayPal',nav_quality:'Verifica Qualità',nav_trust:'Trust',nav_faq:'FAQ',nav_track:'Traccia',nav_feedback:'Feedback',
+cart:'Carrello',menu:'Menu',close:'Chiudi',copy:'Copia',copied:'Copiato',back:'Indietro',next:'Avanti',confirm:'Conferma',download:'Scarica',processing:'Elaborazione',open:'Apri',
+add:'Aggiungi',pcs:'pezzi',remove:'Rimuovi',qty:'Qta',subtotal:'Subtotale',checkout:'Checkout',clear:'Svuota',empty_cart:'Carrello vuoto',items:'articoli',price_cart:'Prezzo visibile nel carrello',
+gate_title:'ACCESSO AL NODO',gate_sub:'Inserisci la chiave operativa per sbloccare il terminale.',gate_btn:'SBLOCCA',gate_err:'Chiave non valida. Riprova.',gate_hint:'Hint: il nome del brand, maiuscolo.',
+boot_ready:'NODO PRONTO',boot_skip:'SALTA BOOT',
+hero_k:'NODO COMMERCIALE · LIVE',hero_t:'CAPITALE, SENZA ATTRITO.',hero_s:'Banconote Euro Grade AAA+ e trasferimenti PayPal P2P che spezzano la catena mittente → destinatario passando da exchange terzi. Verificabile, firmato, tracciabile.',cta1:'ESPLORA IL CATALOGO',cta2:'TRUST CENTER',
+sec_tagli:'TAGLI DISPONIBILI',sec_tagli_s:'Contanti fisici, spediti con corriere tracciato e imballo sigillato.',
+den10:'TAGLIO 10 EUR',den10_d:'Disponibilità ridotta. Su richiesta, soggetto a conferma stock.',
+den20:'TAGLIO 20 EUR',den20_d:'Il formato più richiesto. Tre livelli di volume in catalogo.',
+den50:'TAGLIO 50 EUR',den50_d:'Massima densità di valore per spedizione.',
+onreq_t:'SU RICHIESTA',onreq_s:'Il taglio 10 EUR è a bassa disponibilità: allocato a lotti. Scrivici su Telegram.',onreq_b:'SCRIVI SU TELEGRAM',
+sec_why:'PERCHÉ GUSTAVOEURO',why1t:'VERIFICA INDIPENDENTE',why1d:'Ogni lotto è fotografato e pubblicato nella Verifica Qualità: UV, scanner, fibra di cotone.',
+why2t:'CATENA SPEZZATA',why2d:'I trasferimenti PayPal passano da exchange terzi: il destinatario non vede il mittente originale.',
+why3t:'REGOLAMENTO CRYPTO',why3d:'SOL, BTC, LTC. Commissioni di rete reali, QR dedicato, memo, tracker conferme.',
+why4t:'FIRME PGP + HASH',why4d:'Ogni ordine produce un manifest con hash riga per riga e anteprima di firma PGP.',
+flow:'COME FUNZIONA',f1:'SCEGLI',f2:'VERIFICA',f3:'PAGA',f4:'RICEVI',
+cash_t:'CATALOGO BANCONOTE',cash_s:'Tagli 20 e 50 EUR. Prezzi mostrati solo nel carrello.',
+b1n:'ENTRY LEVEL',b1d:'Lotto d ingresso: 25 pezzi da 20 EUR. Ideale per il primo test qualità.',
+b2n:'SCORTA OPERATIVA',b2d:'75 pezzi da 20 EUR. Il compromesso tra volume e capitale impegnato.',
+b3n:'VOLUME INDUSTRIALE',b3d:'200 pezzi da 20 EUR. Massimo rapporto costo/pezzo del taglio.',
+c1n:'PACK STARTER 50',c1d:'15 pezzi da 50 EUR per entrare nel taglio alto senza immobilizzare troppo.',
+c2n:'BANK RESERVE',c2d:'50 pezzi da 50 EUR. Densità di valore da vera riserva.',
+c3n:'POTERE DI SMERCIO ASSOLUTO',c3d:'150 pezzi da 50 EUR. Il lotto più pesante in catalogo.',
+pp_t:'TRASFERIMENTI PAYPAL',pp_s:'Tu paghi, il saldo arriva. Passaggio da exchange terzo: catena mittente spezzata.',
+pp_note:'Il rapporto pagato/ricevuto è fisso. Ricevi la richiesta PayPal, paghi, il saldo viene girato.',pp_pay:'PAGHI',pp_recv:'RICEVI',
+pp1n:'ASE',pp1d:'Punto d ingresso: paghi 120, ricevi 250 di saldo.',pp2n:'ADVANCED',pp2d:'Moltiplicatore pieno su una cifra contenuta.',
+pp3n:'VIP',pp3d:'Passo successivo. Saldo quasi triplo rispetto al pagato.',pp4n:'PREMIUM',pp4d:'Fascia alta: paghi 450, ricevi 1100.',
+pp5n:'ELITE',pp5d:'Saldo importante senza toccare il migliaio.',pp6n:'MASTER',pp6d:'Il tetto del listino: paghi 1000, ricevi 2800.',
+q_t:'VERIFICA QUALITÀ',q_s:'Tutte le foto e i video del lotto. Filtra per taglio e apri a schermo intero.',q20:'20 EUR',q50:'50 EUR',q_hint:'Clicca per ingrandire · frecce per navigare',
+b_grade:'GRADE AAA+',b_uv:'UV 100%',b_scan:'SCANNER PASS',b_fiber:'FIBRA COTONE',
+t_t:'TRUST CENTER',t_s:'Identità, chiavi, infrastruttura.',
+t1t:'CHIAVE PGP',t1d:'Fingerprint della chiave pubblica usata per firmare manifest e ricevute.',
+t2t:'HASH DI VERIFICA',t2d:'Ogni ordine genera un manifest con hash per riga e checksum globale.',
+t3t:'INDIRIZZO ONION',t3d:'Specchio su rete Tor, indipendente dal DNS di superficie.',
+t4t:'CORRIERI E FINESTRA',t4d:'Spedizioni tracciate, imballo sigillato. Risposte su Telegram nella finestra operativa.',
+fq_t:'DOMANDE FREQUENTI',fq_s:'Risposte secche, senza fuffa.',
+q1:'Le banconote sono vere?',a1:'Sono banconote Euro in circolazione, selezionate Grade AAA+. Corso legale pieno.',
+q2:'Come funziona il trasferimento PayPal?',a2:'Ricevi una richiesta PayPal, la saldi, e il saldo ti arriva girato tramite exchange terzo.',
+q3:'Quali pagamenti accettate?',a3:'Crypto (SOL/BTC/LTC) a commissioni zero, bonifico SEPA istantaneo (+10%), buoni Amazon (+20%).',
+q4:'Quanto costa la spedizione?',a4:'Dipende da corriere e peso. Concordata su Telegram dopo l ordine.',
+q5:'Quanto tempo per la consegna?',a5:'2-5 giorni lavorativi in Italia con corriere espresso. Locker InPost disponibile.',
+q6:'Posso tracciare l ordine?',a6:'Sì: il codice GST-xxxx-xxxx resta nel browser ed è recuperabile dalla pagina Traccia.',
+tr_t:'TRACCIA ORDINE',tr_s:'Inserisci il codice ordine per recuperare manifest, totale e stato.',tr_ph:'GST-XXXX-XXXX',tr_btn:'Cerca',tr_nf:'Nessun ordine trovato in questo browser.',tr_found:'ORDINE TROVATO',tr_items:'ARTICOLI',tr_total:'TOTALE',tr_status:'STATO',tr_note:'Gli ordini sono salvati in locale. Cambiando browser non li vedi.',
+fb_t:'FEEDBACK',fb_s:'Raccontaci com è andata.',fb_name:'Nome / handle',fb_contact:'Contatto (Telegram o email)',fb_msg:'Messaggio',fb_send:'Invia feedback',fb_ok:'Feedback registrato. Grazie, operatore.',
+pv_t:'PRIVACY',pv_b:'Sito statico, nessun server applicativo. Carrello, ordini e lingua vivono in localStorage del browser; la sessione di accesso in sessionStorage. Nessun tracciante di terze parti. Richieste esterne solo verso i CDN e il generatore QR.',
+tm_t:'TERMINI',tm_b:'GUSTAVOEURO opera dal 2022. Prezzi in EUR, mostrati nel carrello. Disponibilità lotti soggetta a conferma. Il taglio 10 EUR è allocato a lotti. Spedizioni tracciate, tempi stimati dal corriere. Regolamento crypto concluso alla conferma in rete. Nessun rimborso post-spedizione salvo non conformità documentata.',
+ck_t:'COOKIE',ck_b:'Nessun cookie di profilazione. Solo localStorage (carrello, ordini, lingua) e sessionStorage (accesso).',
+co_t:'CHECKOUT',co_empty:'Il carrello è vuoto.',s1:'DATI',s2:'VERIFICA',s3:'PAGAMENTO',s4:'CONFERMA',
+co_dati:'DATI OPERATORE',co_ver:'MANIFEST DI VERIFICA',co_pag:'METODO DI PAGAMENTO',co_conf:'CONFERMA',
+ship_t:'DATI DI SPEDIZIONE',pp_only:'Carrello con SOLO PayPal: nessuna spedizione. Inserisci la tua email PayPal due volte.',mixed:'Carrello misto: servono sia spedizione sia email PayPal.',
+f_name:'Nome e cognome',f_email:'Email',f_phone:'Telefono',f_addr:'Indirizzo',f_city:'Città',f_zip:'CAP',f_country:'Paese',f_notes:'Note per il nodo (opzionale)',f_ppmail:'Email PayPal',f_ppmail2:'Conferma email PayPal',
+manifest:'MANIFEST',ledger:'LEDGER HASH',total:'TOTALE',checksum:'CHECKSUM',draft:'ID BOZZA',sess:'ID SESSIONE',pgp_prev:'ANTEPRIMA FIRMA PGP',sign_ok:'FIRMA VALIDA',
+co_next:'Avanti',co_back:'Indietro',co_pay:'Vai al pagamento',co_conf_btn:'Conferma ordine',co_receipt:'Scarica ricevuta',
+pm_crypto:'CRYPTO',pm_crypto_d:'SOL / BTC / LTC — 0% commissioni, regolamento in rete.',pm_sepa:'BONIFICO SEPA ISTANT',pm_sepa_d:'Accredito immediato — +10% gestione.',pm_amz:'BUONI AMAZON',pm_amz_d:'Buoni regalo Amazon — +20% conversione.',
+net:'SCEGLI LA RETE',only:'INVIA SOLO {S} SU QUESTA RETE',addr:'INDIRIZZO DI DEPOSITO',amount:'IMPORTO ESATTO',memo:'MEMO (OBBLIGATORIO)',conf:'CONFERME RICHIESTE',exp:'SCADENZA PREVENTIVO',scan:'SCANSIONA IL QR',verif:'VERIFICATO PGP',fees0:'COMMISSIONI 0%',txprev:'ANTEPRIMA TRANSAZIONE',explorer:'Apri su explorer',
+sepa_badge:'SEPA INSTANT',sepa_warn:'+10% DI GESTIONE SUL TOTALE',sepa_iban:'IBAN DEL NODO',sepa_note:'IBAN comunicato su Telegram alla conferma.',sepa_causal:'CAUSALE / RIFERIMENTO',brk_amt:'IMPORTO BASE',brk_fee:'GESTIONE +10%',brk_tot:'TOTALE DA BONIFICARE',
+st1:'Apri la home banking',st2:'Seleziona bonifico istantaneo SEPA',st3:'Incolla IBAN e causale con il codice ordine',st4:'Invia la ricevuta su Telegram',
+amz_badge:'AMAZON VOUCHER',amz_warn:'+20% DI CONVERSIONE SUL TOTALE',amz_region:'REGIONE BUONO',amz_code:'CODICE BUONO (15 CIFRE)',brk_val:'VALORE BUONO',at1:'Acquista il buono Amazon',at2:'Scegli l importo indicato',at3:'Incolla qui il codice e invia',
+ok_missing:'Compila tutti i campi obbligatori.',ok_invalid:'Email non valida.',ok_pp:'Le due email PayPal non coincidono.',
+thanks_t:'ORDINE REGISTRATO',thanks_s:'Il nodo ha acquisito il manifest. Conserva il codice ordine.',thanks_tg:'Invia il codice su Telegram',thanks_track:'Traccia questo ordine',receipt:'RICEVUTA',order_code:'CODICE ORDINE',
+fc:'CONTATTI',fl:'LEGALE',fn:'NAVIGAZIONE',rights:'Tutti i diritti riservati.',lang:'Lingua',live:'LIVE',tor:'TOR 3 HOPS'},
+en:{brand:'GUSTAVOEURO',tagline:'Euro banknotes Grade AAA+ · Anonymous PayPal · Crypto settlement',est:'EST. 2022 · NODE ONLINE',
+nav_home:'Home',nav_cash:'Banknotes',nav_paypal:'PayPal',nav_quality:'Quality Check',nav_trust:'Trust',nav_faq:'FAQ',nav_track:'Track',nav_feedback:'Feedback',
+cart:'Cart',menu:'Menu',close:'Close',copy:'Copy',copied:'Copied',back:'Back',next:'Next',confirm:'Confirm',download:'Download',processing:'Processing',open:'Open',
+add:'Add',pcs:'pcs',remove:'Remove',qty:'Qty',subtotal:'Subtotal',checkout:'Checkout',clear:'Clear',empty_cart:'Cart is empty',items:'items',price_cart:'Price shown in cart',
+gate_title:'NODE ACCESS',gate_sub:'Enter the operational key to unlock the terminal.',gate_btn:'UNLOCK',gate_err:'Invalid key. Try again.',gate_hint:'Hint: the brand name, uppercase.',
+boot_ready:'NODE READY',boot_skip:'SKIP BOOT',
+hero_k:'COMMERCIAL NODE · LIVE',hero_t:'CAPITAL, WITHOUT FRICTION.',hero_s:'Euro banknotes Grade AAA+ and P2P PayPal transfers that break the sender → receiver chain by routing through third-party exchanges. Verifiable, signed, traceable.',cta1:'BROWSE CATALOG',cta2:'TRUST CENTER',
+sec_tagli:'AVAILABLE DENOMINATIONS',sec_tagli_s:'Physical cash, shipped tracked with sealed packaging.',
+den10:'10 EUR DENOMINATION',den10_d:'Low availability. On request, subject to stock confirmation.',
+den20:'20 EUR DENOMINATION',den20_d:'Most requested format. Three volume tiers in catalog.',
+den50:'50 EUR DENOMINATION',den50_d:'Maximum value density per shipment.',
+onreq_t:'ON REQUEST',onreq_s:'The 10 EUR denomination is low stock: allocated in batches. Message us on Telegram.',onreq_b:'MESSAGE ON TELEGRAM',
+sec_why:'WHY GUSTAVOEURO',why1t:'INDEPENDENT VERIFICATION',why1d:'Every batch is photographed and published in Quality Check: UV, scanner, cotton fibre.',
+why2t:'BROKEN CHAIN',why2d:'PayPal transfers route through third-party exchanges: the receiver never sees the original sender.',
+why3t:'CRYPTO SETTLEMENT',why3d:'SOL, BTC, LTC. Real network fees, dedicated QR, memo, confirmation tracker.',
+why4t:'PGP + HASHES',why4d:'Every order produces a manifest with per-line hashes and a PGP signature preview.',
+flow:'HOW IT WORKS',f1:'CHOOSE',f2:'VERIFY',f3:'PAY',f4:'RECEIVE',
+cash_t:'BANKNOTE CATALOG',cash_s:'20 and 50 EUR denominations. Prices shown only in the cart.',
+b1n:'ENTRY LEVEL',b1d:'Entry batch: 25 notes of 20 EUR. Perfect for a first quality test.',
+b2n:'OPERATIONAL STOCK',b2d:'75 notes of 20 EUR. The sweet spot between volume and committed capital.',
+b3n:'INDUSTRIAL VOLUME',b3d:'200 notes of 20 EUR. Best cost-per-note ratio of this denomination.',
+c1n:'STARTER PACK 50',c1d:'15 notes of 50 EUR to enter the high denomination without over-committing.',
+c2n:'BANK RESERVE',c2d:'50 notes of 50 EUR. Real reserve-grade value density.',
+c3n:'ABSOLUTE PURCHASING POWER',c3d:'150 notes of 50 EUR. The heaviest batch in catalog.',
+pp_t:'PAYPAL TRANSFERS',pp_s:'You pay, the balance arrives. Routed through a third-party exchange: sender chain broken.',
+pp_note:'The paid/received ratio is fixed. You get a PayPal request, you pay, the balance is forwarded.',pp_pay:'YOU PAY',pp_recv:'YOU RECEIVE',
+pp1n:'ASE',pp1d:'Entry point: pay 120, receive 250 balance.',pp2n:'ADVANCED',pp2d:'Full multiplier on a still contained amount.',
+pp3n:'VIP',pp3d:'Next step. Balance nearly triple the paid amount.',pp4n:'PREMIUM',pp4d:'High tier: pay 450, receive 1100.',
+pp5n:'ELITE',pp5d:'Serious balance without hitting four digits.',pp6n:'MASTER',pp6d:'Top of the list: pay 1000, receive 2800.',
+q_t:'QUALITY CHECK',q_s:'Every photo and video of the batch. Filter by denomination and open fullscreen.',q20:'20 EUR',q50:'50 EUR',q_hint:'Click to zoom · arrow keys to navigate',
+b_grade:'GRADE AAA+',b_uv:'UV 100%',b_scan:'SCANNER PASS',b_fiber:'COTTON FIBRE',
+t_t:'TRUST CENTER',t_s:'Identity, keys, infrastructure.',
+t1t:'PGP KEY',t1d:'Fingerprint of the public key used to sign manifests and receipts.',
+t2t:'VERIFICATION HASH',t2d:'Every order generates a manifest with per-line hashes and a global checksum.',
+t3t:'ONION ADDRESS',t3d:'Tor network mirror, independent from surface DNS.',
+t4t:'COURIERS & WINDOW',t4d:'Tracked shipments, sealed packaging. Telegram replies within the operating window.',
+fq_t:'FREQUENTLY ASKED',fq_s:'Straight answers, no fluff.',
+q1:'Are the banknotes real?',a1:'Circulating Euro banknotes, selected Grade AAA+. Full legal tender.',
+q2:'How does the PayPal transfer work?',a2:'You get a PayPal request, settle it, and the balance is forwarded through a third-party exchange.',
+q3:'Which payments do you accept?',a3:'Crypto (SOL/BTC/LTC) at zero fees, SEPA instant (+10%), Amazon vouchers (+20%).',
+q4:'How much is shipping?',a4:'Depends on courier and weight. Agreed on Telegram after the order.',
+q5:'How long is delivery?',a5:'2-5 business days in Italy with express courier. InPost locker available.',
+q6:'Can I track my order?',a6:'Yes: the GST-xxxx-xxxx code stays in your browser and is recoverable from the Track page.',
+tr_t:'TRACK ORDER',tr_s:'Enter the order code to recover manifest, total and status.',tr_ph:'GST-XXXX-XXXX',tr_btn:'Search',tr_nf:'No order found in this browser.',tr_found:'ORDER FOUND',tr_items:'ITEMS',tr_total:'TOTAL',tr_status:'STATUS',tr_note:'Orders are stored locally. Switching browser loses them.',
+fb_t:'FEEDBACK',fb_s:'Tell us how it went.',fb_name:'Name / handle',fb_contact:'Contact (Telegram or email)',fb_msg:'Message',fb_send:'Send feedback',fb_ok:'Feedback recorded. Thank you, operator.',
+pv_t:'PRIVACY',pv_b:'Static site, no application server. Cart, orders and language live in browser localStorage; access session in sessionStorage. No third-party trackers. External requests only to CDNs and the QR generator.',
+tm_t:'TERMS',tm_b:'GUSTAVOEURO operating since 2022. Prices in EUR, shown in cart. Batch availability subject to confirmation. The 10 EUR denomination is batch-allocated. Tracked shipments, courier-estimated times. Crypto settlement completes at network confirmation. No refunds after shipping except documented non-compliance.',
+ck_t:'COOKIES',ck_b:'No profiling cookies. Only localStorage (cart, orders, language) and sessionStorage (access).',
+co_t:'CHECKOUT',co_empty:'Cart is empty.',s1:'DETAILS',s2:'VERIFY',s3:'PAYMENT',s4:'CONFIRM',
+co_dati:'OPERATOR DETAILS',co_ver:'VERIFICATION MANIFEST',co_pag:'PAYMENT METHOD',co_conf:'CONFIRMATION',
+ship_t:'SHIPPING DETAILS',pp_only:'Cart with PayPal ONLY: no shipping. Enter your PayPal email twice.',mixed:'Mixed cart: shipping details and PayPal email are both required.',
+f_name:'Full name',f_email:'Email',f_phone:'Phone',f_addr:'Address',f_city:'City',f_zip:'ZIP',f_country:'Country',f_notes:'Notes for the node (optional)',f_ppmail:'PayPal email',f_ppmail2:'Confirm PayPal email',
+manifest:'MANIFEST',ledger:'LEDGER HASH',total:'TOTAL',checksum:'CHECKSUM',draft:'DRAFT ID',sess:'SESSION ID',pgp_prev:'PGP SIGNATURE PREVIEW',sign_ok:'SIGNATURE VALID',
+co_next:'Next',co_back:'Back',co_pay:'Go to payment',co_conf_btn:'Confirm order',co_receipt:'Download receipt',
+pm_crypto:'CRYPTO',pm_crypto_d:'SOL / BTC / LTC — 0% fees, on-chain settlement.',pm_sepa:'SEPA INSTANT TRANSFER',pm_sepa_d:'Immediate credit — +10% handling.',pm_amz:'AMAZON VOUCHERS',pm_amz_d:'Amazon gift vouchers — +20% conversion.',
+net:'CHOOSE NETWORK',only:'SEND ONLY {S} ON THIS NETWORK',addr:'DEPOSIT ADDRESS',amount:'EXACT AMOUNT',memo:'MEMO (REQUIRED)',conf:'REQUIRED CONFIRMATIONS',exp:'QUOTE EXPIRY',scan:'SCAN THE QR',verif:'PGP VERIFIED',fees0:'0% FEES',txprev:'TRANSACTION PREVIEW',explorer:'Open in explorer',
+sepa_badge:'SEPA INSTANT',sepa_warn:'+10% HANDLING ON TOTAL',sepa_iban:'NODE IBAN',sepa_note:'IBAN shared on Telegram at confirmation.',sepa_causal:'CAUSAL / REFERENCE',brk_amt:'BASE AMOUNT',brk_fee:'HANDLING +10%',brk_tot:'TOTAL TO TRANSFER',
+st1:'Open your home banking',st2:'Select SEPA instant transfer',st3:'Paste IBAN and causal with the order code',st4:'Send the receipt on Telegram',
+amz_badge:'AMAZON VOUCHER',amz_warn:'+20% CONVERSION ON TOTAL',amz_region:'VOUCHER REGION',amz_code:'VOUCHER CODE (15 DIGITS)',brk_val:'VOUCHER VALUE',at1:'Buy the Amazon voucher',at2:'Choose the stated amount',at3:'Paste the code here and send',
+ok_missing:'Fill all required fields.',ok_invalid:'Invalid email.',ok_pp:'The two PayPal emails do not match.',
+thanks_t:'ORDER REGISTERED',thanks_s:'The node has ingested the manifest. Keep your order code.',thanks_tg:'Send code on Telegram',thanks_track:'Track this order',receipt:'RECEIPT',order_code:'ORDER CODE',
+fc:'CONTACTS',fl:'LEGAL',fn:'NAVIGATION',rights:'All rights reserved.',lang:'Language',live:'LIVE',tor:'TOR 3 HOPS'},
+es:{brand:'GUSTAVOEURO',tagline:'Billetes de Euro Grade AAA+ · PayPal anónimo · Liquidación crypto',est:'EST. 2022 · NODO ACTIVO',
+nav_home:'Inicio',nav_cash:'Billetes',nav_paypal:'PayPal',nav_quality:'Verificar Calidad',nav_trust:'Trust',nav_faq:'FAQ',nav_track:'Rastrear',nav_feedback:'Feedback',
+cart:'Carrito',menu:'Menú',close:'Cerrar',copy:'Copiar',copied:'Copiado',back:'Atrás',next:'Siguiente',confirm:'Confirmar',download:'Descargar',processing:'Procesando',open:'Abrir',
+add:'Añadir',pcs:'piezas',remove:'Quitar',qty:'Cant',subtotal:'Subtotal',checkout:'Checkout',clear:'Vaciar',empty_cart:'Carrito vacío',items:'artículos',price_cart:'Precio visible en el carrito',
+gate_title:'ACCESO AL NODO',gate_sub:'Introduce la clave operativa para desbloquear el terminal.',gate_btn:'DESBLOQUEAR',gate_err:'Clave no válida. Reintenta.',gate_hint:'Pista: el nombre de la marca, en mayúsculas.',
+boot_ready:'NODO LISTO',boot_skip:'SALTAR BOOT',
+hero_k:'NODO COMERCIAL · LIVE',hero_t:'CAPITAL, SIN ROZAMIENTO.',hero_s:'Billetes de Euro Grade AAA+ y transferencias PayPal P2P que rompen la cadena emisor → receptor pasando por exchanges terceros. Verificable, firmado, rastreable.',cta1:'EXPLORAR CATÁLOGO',cta2:'TRUST CENTER',
+sec_tagli:'DENOMINACIONES DISPONIBLES',sec_tagli_s:'Efectivo físico, enviado con seguimiento y embalaje sellado.',
+den10:'DENOMINACIÓN 10 EUR',den10_d:'Disponibilidad reducida. Bajo pedido, sujeto a confirmación.',
+den20:'DENOMINACIÓN 20 EUR',den20_d:'El formato más pedido. Tres niveles de volumen en catálogo.',
+den50:'DENOMINACIÓN 50 EUR',den50_d:'Máxima densidad de valor por envío.',
+onreq_t:'BAJO PEDIDO',onreq_s:'La denominación de 10 EUR tiene poco stock: se asigna por lotes. Escríbenos por Telegram.',onreq_b:'ESCRIBIR POR TELEGRAM',
+sec_why:'POR QUÉ GUSTAVOEURO',why1t:'VERIFICACIÓN INDEPENDIENTE',why1d:'Cada lote se fotografía y se publica en Verificar Calidad: UV, escáner, fibra de algodón.',
+why2t:'CADENA ROTA',why2d:'Las transferencias PayPal pasan por exchanges terceros: el receptor nunca ve al emisor original.',
+why3t:'LIQUIDACIÓN CRYPTO',why3d:'SOL, BTC, LTC. Comisiones de red reales, QR dedicado, memo, tracker.',
+why4t:'PGP + HASHES',why4d:'Cada pedido genera un manifest con hash línea a línea y vista previa de firma PGP.',
+flow:'CÓMO FUNCIONA',f1:'ELIGE',f2:'VERIFICA',f3:'PAGA',f4:'RECIBE',
+cash_t:'CATÁLOGO DE BILLETES',cash_s:'Denominaciones de 20 y 50 EUR. Precios solo en el carrito.',
+b1n:'ENTRY LEVEL',b1d:'Lote de entrada: 25 billetes de 20 EUR. Ideal para el primer test.',
+b2n:'STOCK OPERATIVO',b2d:'75 billetes de 20 EUR. Equilibrio entre volumen y capital comprometido.',
+b3n:'VOLUMEN INDUSTRIAL',b3d:'200 billetes de 20 EUR. Mejor relación coste/pieza.',
+c1n:'PACK STARTER 50',c1d:'15 billetes de 50 EUR para entrar sin inmovilizar demasiado.',
+c2n:'BANK RESERVE',c2d:'50 billetes de 50 EUR. Densidad de valor de reserva real.',
+c3n:'PODER DE COMPRA ABSOLUTO',c3d:'150 billetes de 50 EUR. El lote más pesado del catálogo.',
+pp_t:'TRANSFERENCIAS PAYPAL',pp_s:'Tú pagas, el saldo llega. Vía exchange tercero: cadena emisor rota.',
+pp_note:'La relación pagado/recibido es fija. Recibes la solicitud PayPal, pagas y el saldo se transfiere.',pp_pay:'PAGAS',pp_recv:'RECIBES',
+pp1n:'ASE',pp1d:'Entrada: pagas 120, recibes 250 de saldo.',pp2n:'ADVANCED',pp2d:'Multiplicador completo con cifra contenida.',
+pp3n:'VIP',pp3d:'Siguiente paso. Saldo casi triple.',pp4n:'PREMIUM',pp4d:'Franja alta: pagas 450, recibes 1100.',
+pp5n:'ELITE',pp5d:'Saldo importante sin llegar al millar.',pp6n:'MASTER',pp6d:'Tope de la lista: pagas 1000, recibes 2800.',
+q_t:'VERIFICAR CALIDAD',q_s:'Todas las fotos y vídeos del lote. Filtra por denominación y abre a pantalla completa.',q20:'20 EUR',q50:'50 EUR',q_hint:'Clic para ampliar · flechas para navegar',
+b_grade:'GRADE AAA+',b_uv:'UV 100%',b_scan:'SCANNER PASS',b_fiber:'FIBRA ALGODÓN',
+t_t:'TRUST CENTER',t_s:'Identidad, claves, infraestructura.',
+t1t:'CLAVE PGP',t1d:'Fingerprint de la clave pública usada para firmar manifests y recibos.',
+t2t:'HASH DE VERIFICACIÓN',t2d:'Cada pedido genera un manifest con hash por línea y checksum global.',
+t3t:'DIRECCIÓN ONION',t3d:'Espejo en red Tor, independiente del DNS de superficie.',
+t4t:'MENSAJERÍAS Y VENTANA',t4d:'Envíos con seguimiento, embalaje sellado. Respuestas en Telegram dentro de la ventana.',
+fq_t:'PREGUNTAS FRECUENTES',fq_s:'Respuestas directas, sin relleno.',
+q1:'¿Los billetes son reales?',a1:'Billetes de Euro en circulación, seleccionados Grade AAA+. Curso legal pleno.',
+q2:'¿Cómo funciona la transferencia PayPal?',a2:'Recibes una solicitud PayPal, la pagas y el saldo llega vía exchange tercero.',
+q3:'¿Qué pagos aceptáis?',a3:'Crypto (SOL/BTC/LTC) sin comisiones, SEPA instantáneo (+10%), bonos Amazon (+20%).',
+q4:'¿Cuánto cuesta el envío?',a4:'Depende de mensajería y peso. Se acuerda por Telegram.',
+q5:'¿Cuánto tarda la entrega?',a5:'2-5 días laborables en Italia con mensajería exprés. Locker InPost disponible.',
+q6:'¿Puedo rastrear el pedido?',a6:'Sí: el código GST-xxxx-xxxx queda en el navegador y se recupera desde Rastrear.',
+tr_t:'RASTREAR PEDIDO',tr_s:'Introduce el código para recuperar manifest, total y estado.',tr_ph:'GST-XXXX-XXXX',tr_btn:'Buscar',tr_nf:'Ningún pedido encontrado en este navegador.',tr_found:'PEDIDO ENCONTRADO',tr_items:'ARTÍCULOS',tr_total:'TOTAL',tr_status:'ESTADO',tr_note:'Los pedidos se guardan en local. Si cambias de navegador no los ves.',
+fb_t:'FEEDBACK',fb_s:'Cuéntanos cómo fue.',fb_name:'Nombre / handle',fb_contact:'Contacto (Telegram o email)',fb_msg:'Mensaje',fb_send:'Enviar feedback',fb_ok:'Feedback registrado. Gracias, operador.',
+pv_t:'PRIVACIDAD',pv_b:'Sitio estático, sin servidor de aplicación. Carrito, pedidos e idioma en el localStorage; sesión de acceso en sessionStorage. Sin rastreadores de terceros. Peticiones externas solo a CDN y al generador QR.',
+tm_t:'TÉRMINOS',tm_b:'GUSTAVOEURO opera desde 2022. Precios en EUR, mostrados en el carrito. Disponibilidad sujeta a confirmación. La denominación de 10 EUR se asigna por lotes. Envíos con seguimiento, tiempos estimados por la mensajería. Liquidación crypto al confirmar en red. Sin reembolsos post-envío salvo no conformidad documentada.',
+ck_t:'COOKIES',ck_b:'Sin cookies de perfilado. Solo localStorage (carrito, pedidos, idioma) y sessionStorage (acceso).',
+co_t:'CHECKOUT',co_empty:'El carrito está vacío.',s1:'DATOS',s2:'VERIFICAR',s3:'PAGO',s4:'CONFIRMAR',
+co_dati:'DATOS DEL OPERADOR',co_ver:'MANIFEST DE VERIFICACIÓN',co_pag:'MÉTODO DE PAGO',co_conf:'CONFIRMACIÓN',
+ship_t:'DATOS DE ENVÍO',pp_only:'Carrito con SOLO PayPal: sin envío. Introduce tu email PayPal dos veces.',mixed:'Carrito mixto: hacen falta datos de envío y email PayPal.',
+f_name:'Nombre y apellidos',f_email:'Email',f_phone:'Teléfono',f_addr:'Dirección',f_city:'Ciudad',f_zip:'C.P.',f_country:'País',f_notes:'Notas para el nodo (opcional)',f_ppmail:'Email PayPal',f_ppmail2:'Confirmar email PayPal',
+manifest:'MANIFEST',ledger:'LEDGER HASH',total:'TOTAL',checksum:'CHECKSUM',draft:'ID BORRADOR',sess:'ID SESIÓN',pgp_prev:'VISTA PREVIA FIRMA PGP',sign_ok:'FIRMA VÁLIDA',
+co_next:'Siguiente',co_back:'Atrás',co_pay:'Ir al pago',co_conf_btn:'Confirmar pedido',co_receipt:'Descargar recibo',
+pm_crypto:'CRYPTO',pm_crypto_d:'SOL / BTC / LTC — 0% comisiones, liquidación en red.',pm_sepa:'TRANSFERENCIA SEPA INSTANT',pm_sepa_d:'Abono inmediato — +10% gestión.',pm_amz:'BONOS AMAZON',pm_amz_d:'Tarjetas regalo Amazon — +20% conversión.',
+net:'ELIGE LA RED',only:'ENVÍA SOLO {S} EN ESTA RED',addr:'DIRECCIÓN DE DEPÓSITO',amount:'IMPORTE EXACTO',memo:'MEMO (OBLIGATORIO)',conf:'CONFIRMACIONES REQUERIDAS',exp:'CADUCIDAD',scan:'ESCANEA EL QR',verif:'VERIFICADO PGP',fees0:'COMISIONES 0%',txprev:'VISTA PREVIA TRANSACCIÓN',explorer:'Abrir en explorer',
+sepa_badge:'SEPA INSTANT',sepa_warn:'+10% DE GESTIÓN SOBRE EL TOTAL',sepa_iban:'IBAN DEL NODO',sepa_note:'IBAN comunicado por Telegram al confirmar.',sepa_causal:'CAUSAL / REFERENCIA',brk_amt:'IMPORTE BASE',brk_fee:'GESTIÓN +10%',brk_tot:'TOTAL A TRANSFERIR',
+st1:'Abre tu banca online',st2:'Selecciona transferencia instantánea SEPA',st3:'Pega IBAN y causal con el código de pedido',st4:'Envía el recibo por Telegram',
+amz_badge:'AMAZON VOUCHER',amz_warn:'+20% DE CONVERSIÓN SOBRE EL TOTAL',amz_region:'REGIÓN DEL BONO',amz_code:'CÓDIGO DEL BONO (15 DÍGITOS)',brk_val:'VALOR DEL BONO',at1:'Compra el bono Amazon',at2:'Elige el importe indicado',at3:'Pega aquí el código y envía',
+ok_missing:'Rellena todos los campos obligatorios.',ok_invalid:'Email no válido.',ok_pp:'Los dos emails PayPal no coinciden.',
+thanks_t:'PEDIDO REGISTRADO',thanks_s:'El nodo ha registrado el manifest. Conserva el código.',thanks_tg:'Enviar código por Telegram',thanks_track:'Rastrear este pedido',receipt:'RECIBO',order_code:'CÓDIGO DE PEDIDO',
+fc:'CONTACTOS',fl:'LEGAL',fn:'NAVEGACIÓN',rights:'Todos los derechos reservados.',lang:'Idioma',live:'LIVE',tor:'TOR 3 HOPS'},
+de:{brand:'GUSTAVOEURO',tagline:'Euro-Banknoten Grade AAA+ · Anonymes PayPal · Krypto-Abwicklung',est:'EST. 2022 · KNOTEN ONLINE',
+nav_home:'Start',nav_cash:'Banknoten',nav_paypal:'PayPal',nav_quality:'Qualitätscheck',nav_trust:'Trust',nav_faq:'FAQ',nav_track:'Verfolgen',nav_feedback:'Feedback',
+cart:'Warenkorb',menu:'Menü',close:'Schließen',copy:'Kopieren',copied:'Kopiert',back:'Zurück',next:'Weiter',confirm:'Bestätigen',download:'Download',processing:'Verarbeitung',open:'Öffnen',
+add:'Hinzufügen',pcs:'Stück',remove:'Entfernen',qty:'Menge',subtotal:'Zwischensumme',checkout:'Checkout',clear:'Leeren',empty_cart:'Warenkorb leer',items:'Artikel',price_cart:'Preis im Warenkorb',
+gate_title:'KNOTEN-ZUGANG',gate_sub:'Betriebsschlüssel eingeben, um das Terminal zu entsperren.',gate_btn:'ENTSPERREN',gate_err:'Ungültiger Schlüssel.',gate_hint:'Hinweis: der Markenname, groß.',
+boot_ready:'KNOTEN BEREIT',boot_skip:'BOOT ÜBERSPRINGEN',
+hero_k:'HANDELSKNOTEN · LIVE',hero_t:'KAPITAL, OHNE REIBUNG.',hero_s:'Euro-Banknoten Grade AAA+ und P2P-PayPal-Transfers, die die Sender-→-Empfänger-Kette über Dritt-Exchanges brechen. Verifizierbar, signiert, nachvollziehbar.',cta1:'KATALOG ANSEHEN',cta2:'TRUST CENTER',
+sec_tagli:'VERFÜGBARE STÜCKELUNGEN',sec_tagli_s:'Physisches Bargeld, verfolgt und versiegelt versandt.',
+den10:'STÜCKELUNG 10 EUR',den10_d:'Geringe Verfügbarkeit. Auf Anfrage.',
+den20:'STÜCKELUNG 20 EUR',den20_d:'Meistgefragtes Format. Drei Volumenstufen im Katalog.',
+den50:'STÜCKELUNG 50 EUR',den50_d:'Maximale Wertsdichte pro Sendung.',
+onreq_t:'AUF ANFRAGE',onreq_s:'Die 10-EUR-Stückelung ist knapp: Vergabe in Losen. Schreib uns auf Telegram.',onreq_b:'AUF TELEGRAM SCHREIBEN',
+sec_why:'WARUM GUSTAVOEURO',why1t:'UNABHÄNGIGE PRÜFUNG',why1d:'Jedes Los wird fotografiert und im Qualitätscheck veröffentlicht: UV, Scanner, Baumwollfaser.',
+why2t:'GEBROCHENE KETTE',why2d:'PayPal-Transfers laufen über Dritt-Exchanges: der Empfänger sieht den Sender nie.',
+why3t:'KRYPTO-ABWICKLUNG',why3d:'SOL, BTC, LTC. Echte Netzgebühren, eigener QR, Memo, Tracker.',
+why4t:'PGP + HASHES',why4d:'Jede Bestellung erzeugt ein Manifest mit Zeilen-Hashes und PGP-Signaturvorschau.',
+flow:'SO FUNKTIONIERT ES',f1:'WÄHLEN',f2:'PRÜFEN',f3:'ZAHLEN',f4:'ERHALTEN',
+cash_t:'BANKNOTEN-KATALOG',cash_s:'Stückelungen 20 und 50 EUR. Preise nur im Warenkorb.',
+b1n:'ENTRY LEVEL',b1d:'Einstiegslos: 25 Scheine à 20 EUR. Ideal für den ersten Test.',
+b2n:'OPERATIVER BESTAND',b2d:'75 Scheine à 20 EUR. Balance zwischen Volumen und gebundenem Kapital.',
+b3n:'INDUSTRIEVOLUMEN',b3d:'200 Scheine à 20 EUR. Bestes Kosten-pro-Schein-Verhältnis.',
+c1n:'PACK STARTER 50',c1d:'15 Scheine à 50 EUR für den Einstieg ohne große Bindung.',
+c2n:'BANK RESERVE',c2d:'50 Scheine à 50 EUR. Echte Reserve-Wertsdichte.',
+c3n:'ABSOLUTE KAUFKRAFT',c3d:'150 Scheine à 50 EUR. Das schwerste Los im Katalog.',
+pp_t:'PAYPAL-TRANSFERS',pp_s:'Du zahlst, das Guthaben kommt. Über Dritt-Exchange: Senderkette gebrochen.',
+pp_note:'Das Verhältnis gezahlt/erhalten ist fix. Du bekommst eine PayPal-Anforderung, zahlst, das Guthaben wird weitergeleitet.',pp_pay:'DU ZAHLST',pp_recv:'DU ERHÄLTST',
+pp1n:'ASE',pp1d:'Einstieg: zahle 120, erhalte 250 Guthaben.',pp2n:'ADVANCED',pp2d:'Voller Multiplikator bei überschaubarer Summe.',
+pp3n:'VIP',pp3d:'Nächster Schritt. Guthaben fast dreifach.',pp4n:'PREMIUM',pp4d:'Hohe Stufe: zahle 450, erhalte 1100.',
+pp5n:'ELITE',pp5d:'Ernsthaftes Guthaben ohne Vierstelligkeit.',pp6n:'MASTER',pp6d:'Oberes Ende: zahle 1000, erhalte 2800.',
+q_t:'QUALITÄTSCHECK',q_s:'Alle Fotos und Videos des Loses. Nach Stückelung filtern, Vollbild öffnen.',q20:'20 EUR',q50:'50 EUR',q_hint:'Klicken zum Zoomen · Pfeiltasten',
+b_grade:'GRADE AAA+',b_uv:'UV 100%',b_scan:'SCANNER PASS',b_fiber:'BAUMWOLLFASER',
+t_t:'TRUST CENTER',t_s:'Identität, Schlüssel, Infrastruktur.',
+t1t:'PGP-SCHLÜSSEL',t1d:'Fingerprint des öffentlichen Schlüssels für Manifeste und Belege.',
+t2t:'VERIFIKATIONS-HASH',t2d:'Jede Bestellung erzeugt ein Manifest mit Zeilen-Hashes und globaler Checksum.',
+t3t:'ONION-ADRESSE',t3d:'Tor-Spiegel, unabhängig vom Oberflächen-DNS.',
+t4t:'KURIERE & FENSTER',t4d:'Verfolgte Sendungen, versiegelte Verpackung. Telegram-Antworten im Betriebsfenster.',
+fq_t:'HÄUFIGE FRAGEN',fq_s:'Klare Antworten, kein Füllstoff.',
+q1:'Sind die Banknoten echt?',a1:'Umlaufende Euro-Banknoten, Grade AAA+ selektiert. Volles gesetzliches Zahlungsmittel.',
+q2:'Wie funktioniert der PayPal-Transfer?',a2:'Du bekommst eine PayPal-Anforderung, zahlst sie, das Guthaben wird über einen Dritt-Exchange geleitet.',
+q3:'Welche Zahlungen?',a3:'Krypto (SOL/BTC/LTC) ohne Gebühren, SEPA Instant (+10%), Amazon-Gutscheine (+20%).',
+q4:'Was kostet der Versand?',a4:'Hängt von Kurier und Gewicht ab. Per Telegram vereinbart.',
+q5:'Wie lange dauert die Lieferung?',a5:'2-5 Werktage in Italien per Express. InPost-Locker verfügbar.',
+q6:'Kann ich verfolgen?',a6:'Ja: der GST-xxxx-xxxx-Code bleibt im Browser und ist auf der Verfolgen-Seite abrufbar.',
+tr_t:'BESTELLUNG VERFOLGEN',tr_s:'Bestellcode eingeben für Manifest, Summe und Status.',tr_ph:'GST-XXXX-XXXX',tr_btn:'Suchen',tr_nf:'Keine Bestellung in diesem Browser gefunden.',tr_found:'BESTELLUNG GEFUNDEN',tr_items:'ARTIKEL',tr_total:'SUMME',tr_status:'STATUS',tr_note:'Bestellungen liegen lokal. Browserwechsel = Verlust.',
+fb_t:'FEEDBACK',fb_s:'Sag uns, wie es lief.',fb_name:'Name / Handle',fb_contact:'Kontakt (Telegram oder E-Mail)',fb_msg:'Nachricht',fb_send:'Feedback senden',fb_ok:'Feedback erfasst. Danke, Operator.',
+pv_t:'DATENSCHUTZ',pv_b:'Statische Seite, kein Applikationsserver. Warenkorb, Bestellungen und Sprache im localStorage; Zugangssitzung im sessionStorage. Keine Dritt-Tracker. Externe Anfragen nur an CDNs und den QR-Generator.',
+tm_t:'AGB',tm_b:'GUSTAVOEURO seit 2022. Preise in EUR, im Warenkorb sichtbar. Verfügbarkeit vorbehaltlich Bestätigung. Die 10-EUR-Stückelung wird in Losen vergeben. Verfolgte Sendungen, Kurier-Schätzzeiten. Krypto-Abwicklung bei Netzbestätigung. Keine Rückerstattung nach Versand außer dokumentierter Abweichung.',
+ck_t:'COOKIES',ck_b:'Keine Profiling-Cookies. Nur localStorage (Warenkorb, Bestellungen, Sprache) und sessionStorage (Zugang).',
+co_t:'CHECKOUT',co_empty:'Warenkorb ist leer.',s1:'DATEN',s2:'PRÜFEN',s3:'ZAHLUNG',s4:'BESTÄTIGEN',
+co_dati:'OPERATOR-DATEN',co_ver:'VERIFIKATIONS-MANIFEST',co_pag:'ZAHLUNGSMETHODE',co_conf:'BESTÄTIGUNG',
+ship_t:'VERSANDDATEN',pp_only:'Warenkorb NUR mit PayPal: kein Versand. PayPal-E-Mail zweimal eingeben.',mixed:'Gemischter Warenkorb: Versanddaten und PayPal-E-Mail nötig.',
+f_name:'Vor- und Nachname',f_email:'E-Mail',f_phone:'Telefon',f_addr:'Adresse',f_city:'Stadt',f_zip:'PLZ',f_country:'Land',f_notes:'Notizen (optional)',f_ppmail:'PayPal-E-Mail',f_ppmail2:'PayPal-E-Mail bestätigen',
+manifest:'MANIFEST',ledger:'LEDGER HASH',total:'SUMME',checksum:'CHECKSUM',draft:'ENTWURF-ID',sess:'SITZUNGS-ID',pgp_prev:'PGP-SIGNATURVORSCHAU',sign_ok:'SIGNATUR GÜLTIG',
+co_next:'Weiter',co_back:'Zurück',co_pay:'Zur Zahlung',co_conf_btn:'Bestellung bestätigen',co_receipt:'Beleg herunterladen',
+pm_crypto:'KRYPTO',pm_crypto_d:'SOL / BTC / LTC — 0% Gebühren, Abwicklung on-chain.',pm_sepa:'SEPA-INSTANT-ÜBERWEISUNG',pm_sepa_d:'Sofortige Gutschrift — +10% Bearbeitung.',pm_amz:'AMAZON-GUTSCHEINE',pm_amz_d:'Amazon-Geschenkgutscheine — +20% Konversion.',
+net:'NETZWERK WÄHLEN',only:'NUR {S} IN DIESEM NETZWERK SENDEN',addr:'EINZAHLUNGSADRESSE',amount:'GENAUER BETRAG',memo:'MEMO (PFLICHT)',conf:'BENÖTIGTE BESTÄTIGUNGEN',exp:'ANGEBOTSFRIST',scan:'QR SCANNEN',verif:'PGP VERIFIZIERT',fees0:'0% GEBÜHREN',txprev:'TRANSAKTIONSVORSCHAU',explorer:'Im Explorer öffnen',
+sepa_badge:'SEPA INSTANT',sepa_warn:'+10% BEARBEITUNG AUF SUMME',sepa_iban:'IBAN DES KNOTENS',sepa_note:'IBAN wird bei Bestätigung per Telegram geteilt.',sepa_causal:'VERWENDUNGSZWECK',brk_amt:'GRUNDBETRAG',brk_fee:'BEARBEITUNG +10%',brk_tot:'ZU ÜBERWEISENDER BETRAG',
+st1:'Home-Banking öffnen',st2:'SEPA-Instant-Überweisung wählen',st3:'IBAN und Verwendungszweck mit Bestellcode einfügen',st4:'Beleg per Telegram senden',
+amz_badge:'AMAZON VOUCHER',amz_warn:'+20% KONVERSION AUF SUMME',amz_region:'GUTSCHEIN-REGION',amz_code:'GUTSCHEINCODE (15 ZIFFERN)',brk_val:'GUTSCHEINWERT',at1:'Amazon-Gutschein kaufen',at2:'Angegebenen Betrag wählen',at3:'Code hier einfügen und senden',
+ok_missing:'Alle Pflichtfelder ausfüllen.',ok_invalid:'Ungültige E-Mail.',ok_pp:'Die beiden PayPal-E-Mails stimmen nicht überein.',
+thanks_t:'BESTELLUNG REGISTRIERT',thanks_s:'Der Knoten hat das Manifest erfasst. Code behalten.',thanks_tg:'Code per Telegram senden',thanks_track:'Diese Bestellung verfolgen',receipt:'BELEG',order_code:'BESTELLCODE',
+fc:'KONTAKT',fl:'RECHTLICHES',fn:'NAVIGATION',rights:'Alle Rechte vorbehalten.',lang:'Sprache',live:'LIVE',tor:'TOR 3 HOPS'},
+fr:{brand:'GUSTAVOEURO',tagline:'Billets Euro Grade AAA+ · PayPal anonyme · Règlement crypto',est:'EST. 2022 · NŒUD ACTIF',
+nav_home:'Accueil',nav_cash:'Billets',nav_paypal:'PayPal',nav_quality:'Vérif Qualité',nav_trust:'Trust',nav_faq:'FAQ',nav_track:'Suivre',nav_feedback:'Feedback',
+cart:'Panier',menu:'Menu',close:'Fermer',copy:'Copier',copied:'Copié',back:'Retour',next:'Suivant',confirm:'Confirmer',download:'Télécharger',processing:'Traitement',open:'Ouvrir',
+add:'Ajouter',pcs:'pièces',remove:'Retirer',qty:'Qté',subtotal:'Sous-total',checkout:'Checkout',clear:'Vider',empty_cart:'Panier vide',items:'articles',price_cart:'Prix visible dans le panier',
+gate_title:'ACCÈS AU NŒUD',gate_sub:'Saisis la clé opérationnelle pour déverrouiller le terminal.',gate_btn:'DÉVERROUILLER',gate_err:'Clé invalide. Réessaie.',gate_hint:'Indice : le nom de la marque, en majuscules.',
+boot_ready:'NŒUD PRÊT',boot_skip:'PASSER LE BOOT',
+hero_k:'NŒUD COMMERCIAL · LIVE',hero_t:'CAPITAL, SANS FRICTION.',hero_s:'Billets Euro Grade AAA+ et transferts PayPal P2P qui brisent la chaîne émetteur → destinataire via des exchanges tiers. Vérifiable, signé, traçable.',cta1:'VOIR LE CATALOGUE',cta2:'TRUST CENTER',
+sec_tagli:'COUPURES DISPONIBLES',sec_tagli_s:'Espèces physiques, expédiées en suivi avec emballage scellé.',
+den10:'COUPURE 10 EUR',den10_d:'Disponibilité réduite. Sur demande, sous réserve de stock.',
+den20:'COUPURE 20 EUR',den20_d:'Le format le plus demandé. Trois paliers de volume au catalogue.',
+den50:'COUPURE 50 EUR',den50_d:'Densité de valeur maximale par envoi.',
+onreq_t:'SUR DEMANDE',onreq_s:'La coupure 10 EUR est en stock faible : attribuée par lots. Écris-nous sur Telegram.',onreq_b:'ÉCRIRE SUR TELEGRAM',
+sec_why:'POURQUOI GUSTAVOEURO',why1t:'VÉRIFICATION INDÉPENDANTE',why1d:'Chaque lot est photographié et publié dans Vérif Qualité : UV, scanner, fibre de coton.',
+why2t:'CHAÎNE BRISÉE',why2d:'Les transferts PayPal passent par des exchanges tiers : le destinataire ne voit jamais l émetteur.',
+why3t:'RÈGLEMENT CRYPTO',why3d:'SOL, BTC, LTC. Frais réseau réels, QR dédié, memo, tracker de confirmations.',
+why4t:'PGP + HASH',why4d:'Chaque commande génère un manifest avec hash ligne à ligne et aperçu de signature PGP.',
+flow:'COMMENT ÇA MARCHE',f1:'CHOISIR',f2:'VÉRIFIER',f3:'PAYER',f4:'RECEVOIR',
+cash_t:'CATALOGUE BILLETS',cash_s:'Coupures 20 et 50 EUR. Prix affichés uniquement dans le panier.',
+b1n:'ENTRY LEVEL',b1d:'Lot d entrée : 25 billets de 20 EUR. Idéal pour un premier test.',
+b2n:'STOCK OPÉRATIONNEL',b2d:'75 billets de 20 EUR. Équilibre entre volume et capital engagé.',
+b3n:'VOLUME INDUSTRIEL',b3d:'200 billets de 20 EUR. Meilleur rapport coût/pièce.',
+c1n:'PACK STARTER 50',c1d:'15 billets de 50 EUR pour entrer sans trop immobiliser.',
+c2n:'BANK RESERVE',c2d:'50 billets de 50 EUR. Densité de valeur de réserve réelle.',
+c3n:'POUVOIR D ACHAT ABSOLU',c3d:'150 billets de 50 EUR. Le lot le plus lourd du catalogue.',
+pp_t:'TRANSFERTS PAYPAL',pp_s:'Tu paies, le solde arrive. Via exchange tiers : chaîne émetteur brisée.',
+pp_note:'Le rapport payé/reçu est fixe. Tu reçois la demande PayPal, tu paies, le solde est transféré.',pp_pay:'TU PAIES',pp_recv:'TU REÇOIS',
+pp1n:'ASE',pp1d:'Entrée : paie 120, reçois 250 de solde.',pp2n:'ADVANCED',pp2d:'Multiplicateur plein sur un montant contenu.',
+pp3n:'VIP',pp3d:'Étape suivante. Solde presque triple.',pp4n:'PREMIUM',pp4d:'Haut de gamme : paie 450, reçois 1100.',
+pp5n:'ELITE',pp5d:'Solde sérieux sans atteindre le millier.',pp6n:'MASTER',pp6d:'Sommet de la liste : paie 1000, reçois 2800.',
+q_t:'VÉRIF QUALITÉ',q_s:'Toutes les photos et vidéos du lot. Filtre par coupure, ouvre en plein écran.',q20:'20 EUR',q50:'50 EUR',q_hint:'Clic pour agrandir · flèches pour naviguer',
+b_grade:'GRADE AAA+',b_uv:'UV 100%',b_scan:'SCANNER PASS',b_fiber:'FIBRE COTON',
+t_t:'TRUST CENTER',t_s:'Identité, clés, infrastructure.',
+t1t:'CLÉ PGP',t1d:'Empreinte de la clé publique servant à signer manifests et reçus.',
+t2t:'HASH DE VÉRIFICATION',t2d:'Chaque commande génère un manifest avec hash par ligne et checksum global.',
+t3t:'ADRESSE ONION',t3d:'Miroir réseau Tor, indépendant du DNS de surface.',
+t4t:'TRANSPORTEURS & CRÉNEAU',t4d:'Envois suivis, emballage scellé. Réponses Telegram dans le créneau.',
+fq_t:'QUESTIONS FRÉQUENTES',fq_s:'Réponses nettes, sans remplissage.',
+q1:'Les billets sont-ils vrais ?',a1:'Billets Euro en circulation, sélectionnés Grade AAA+. Cours légal plein.',
+q2:'Comment marche le transfert PayPal ?',a2:'Tu reçois une demande PayPal, tu la règles, et le solde t est transféré via un exchange tiers.',
+q3:'Quels paiements ?',a3:'Crypto (SOL/BTC/LTC) sans frais, SEPA instantané (+10%), chèques Amazon (+20%).',
+q4:'Combien coûte l envoi ?',a4:'Selon transporteur et poids. Convenu sur Telegram.',
+q5:'Délai de livraison ?',a5:'2-5 jours ouvrés en Italie en express. Locker InPost disponible.',
+q6:'Puis-je suivre la commande ?',a6:'Oui : le code GST-xxxx-xxxx reste dans le navigateur et se récupère depuis Suivre.',
+tr_t:'SUIVRE LA COMMANDE',tr_s:'Saisis le code pour récupérer manifest, total et statut.',tr_ph:'GST-XXXX-XXXX',tr_btn:'Chercher',tr_nf:'Aucune commande trouvée dans ce navigateur.',tr_found:'COMMANDE TROUVÉE',tr_items:'ARTICLES',tr_total:'TOTAL',tr_status:'STATUT',tr_note:'Les commandes sont locales. Changer de navigateur les perd.',
+fb_t:'FEEDBACK',fb_s:'Dis-nous comment ça s est passé.',fb_name:'Nom / handle',fb_contact:'Contact (Telegram ou email)',fb_msg:'Message',fb_send:'Envoyer',fb_ok:'Feedback enregistré. Merci, opérateur.',
+pv_t:'CONFIDENTIALITÉ',pv_b:'Site statique, sans serveur applicatif. Panier, commandes et langue dans le localStorage ; session d accès dans sessionStorage. Aucun traceur tiers. Requêtes externes uniquement vers les CDN et le générateur QR.',
+tm_t:'CONDITIONS',tm_b:'GUSTAVOEURO opère depuis 2022. Prix en EUR, affichés dans le panier. Disponibilité sous réserve. La coupure 10 EUR est attribuée par lots. Envois suivis, délais estimés par le transporteur. Règlement crypto à la confirmation réseau. Pas de remboursement après envoi sauf non-conformité documentée.',
+ck_t:'COOKIES',ck_b:'Aucun cookie de profilage. Seulement localStorage (panier, commandes, langue) et sessionStorage (accès).',
+co_t:'CHECKOUT',co_empty:'Le panier est vide.',s1:'DONNÉES',s2:'VÉRIF',s3:'PAIEMENT',s4:'CONFIRMATION',
+co_dati:'DONNÉES OPÉRATEUR',co_ver:'MANIFEST DE VÉRIFICATION',co_pag:'MÉTHODE DE PAIEMENT',co_conf:'CONFIRMATION',
+ship_t:'DONNÉES D EXPÉDITION',pp_only:'Panier avec PayPal SEUL : pas d expédition. Saisis ton email PayPal deux fois.',mixed:'Panier mixte : expédition et email PayPal requis.',
+f_name:'Nom et prénom',f_email:'Email',f_phone:'Téléphone',f_addr:'Adresse',f_city:'Ville',f_zip:'Code postal',f_country:'Pays',f_notes:'Notes (optionnel)',f_ppmail:'Email PayPal',f_ppmail2:'Confirmer l email PayPal',
+manifest:'MANIFEST',ledger:'LEDGER HASH',total:'TOTAL',checksum:'CHECKSUM',draft:'ID BROUILLON',sess:'ID SESSION',pgp_prev:'APERÇU SIGNATURE PGP',sign_ok:'SIGNATURE VALIDE',
+co_next:'Suivant',co_back:'Retour',co_pay:'Aller au paiement',co_conf_btn:'Confirmer la commande',co_receipt:'Télécharger le reçu',
+pm_crypto:'CRYPTO',pm_crypto_d:'SOL / BTC / LTC — 0% frais, règlement on-chain.',pm_sepa:'VIREMENT SEPA INSTANT',pm_sepa_d:'Crédit immédiat — +10% gestion.',pm_amz:'CHÈQUES AMAZON',pm_amz_d:'Chèques cadeaux Amazon — +20% conversion.',
+net:'CHOISIR LE RÉSEAU',only:'ENVOIE UNIQUEMENT {S} SUR CE RÉSEAU',addr:'ADRESSE DE DÉPÔT',amount:'MONTANT EXACT',memo:'MEMO (OBLIGATOIRE)',conf:'CONFIRMATIONS REQUISES',exp:'EXPIRATION DU DEVIS',scan:'SCANNE LE QR',verif:'VÉRIFIÉ PGP',fees0:'0% FRAIS',txprev:'APERÇU TRANSACTION',explorer:'Ouvrir dans l explorer',
+sepa_badge:'SEPA INSTANT',sepa_warn:'+10% DE GESTION SUR LE TOTAL',sepa_iban:'IBAN DU NŒUD',sepa_note:'IBAN communiqué sur Telegram à la confirmation.',sepa_causal:'MOTIF / RÉFÉRENCE',brk_amt:'MONTANT DE BASE',brk_fee:'GESTION +10%',brk_tot:'TOTAL À VIREMER',
+st1:'Ouvre ta banque en ligne',st2:'Choisis le virement instantané SEPA',st3:'Colle IBAN et motif avec le code commande',st4:'Envoie le reçu sur Telegram',
+amz_badge:'AMAZON VOUCHER',amz_warn:'+20% DE CONVERSION SUR LE TOTAL',amz_region:'RÉGION DU CHÈQUE',amz_code:'CODE DU CHÈQUE (15 CHIFFRES)',brk_val:'VALEUR DU CHÈQUE',at1:'Achète le chèque Amazon',at2:'Choisis le montant indiqué',at3:'Colle le code ici et envoie',
+ok_missing:'Remplis tous les champs obligatoires.',ok_invalid:'Email invalide.',ok_pp:'Les deux emails PayPal ne correspondent pas.',
+thanks_t:'COMMANDE ENREGISTRÉE',thanks_s:'Le nœud a ingéré le manifest. Garde ton code.',thanks_tg:'Envoyer le code sur Telegram',thanks_track:'Suivre cette commande',receipt:'REÇU',order_code:'CODE COMMANDE',
+fc:'CONTACTS',fl:'LÉGAL',fn:'NAVIGATION',rights:'Tous droits réservés.',lang:'Langue',live:'LIVE',tor:'TOR 3 HOPS'}
+};
+
+var LangCtx=createContext({lang:'it',t:function(k){return k},setLang:function(){}});
+function useT(){return useContext(LangCtx)}
+
+/* ============================ UI BASE ============================ */
+function Section(p){var s=p.style||{};var rest=Object.assign({},p);delete rest.children;delete rest.style;delete rest.className;
+ return R.createElement('section',Object.assign({className:'card '+(p.className||''),style:Object.assign({padding:22},s)},rest),p.children)}
+
+function Bracket(p){var rest=Object.assign({},p);delete rest.children;delete rest.c;delete rest.style;delete rest.className;
+ return R.createElement('span',Object.assign({className:'brk mono '+(p.className||''),style:Object.assign({color:'var('+(p.c||'--au')+')'},p.style)},rest),p.children)}
+
+function Badge(p){var rest=Object.assign({},p);delete rest.children;delete rest.c;delete rest.style;delete rest.className;
+ return R.createElement('span',Object.assign({className:'badge '+(p.className||''),style:Object.assign({color:'var('+(p.c||'--au')+')',borderColor:'color-mix(in srgb, var('+(p.c||'--au')+') 45%, transparent)',background:'color-mix(in srgb, var('+(p.c||'--au')+') 12%, transparent)'},p.style)},rest),p.children)}
+
+function Chip(p){return R.createElement('span',{className:'chip '+(p.className||''),style:p.style},p.children)}
+
+function Btn(p){var rest=Object.assign({},p);delete rest.children;delete rest.variant;delete rest.style;delete rest.className;
+ var v=p.variant||'';
+ return R.createElement('button',Object.assign({className:'btn '+(v?'btn-'+v:'')+' '+(p.className||''),style:p.style},rest),p.children)}
+
+var CH='!<>-_\\/[]{}—=+*^?#01ABCDEFXYZ';
+function Scramble(p){
+  var txt=p.text||'',st=useState(txt),out=st[0],setOut=st[1];
+  useEffect(function(){
+    var raf,f=0,src=String(txt),q=[];
+    for(var i=0;i<src.length;i++){q.push({c:src[i],s:i*0.9,e:i*0.9+9+Math.random()*9})}
+    function tick(){
+      var done=0,str='';
+      for(var i=0;i<q.length;i++){
+        if(f>=q[i].e){str+=q[i].c;done++}
+        else if(f>=q[i].s){str+=CH[Math.floor(Math.random()*CH.length)]}
+        else{str+=' '}
+      }
+      setOut(str);f++;
+      if(done<q.length){raf=requestAnimationFrame(tick)}else{setOut(src)}
+    }
+    raf=requestAnimationFrame(tick);
+    return function(){cancelAnimationFrame(raf)};
+  },[txt]);
+  return R.createElement('span',{className:p.className,style:p.style},out)
+}
+
+function Img(p){
+  var list=[p.src].concat(p.fb||[]).filter(Boolean);
+  var st=useState(0),i=st[0],setI=st[1];
+  useEffect(function(){setI(0)},[p.src]);
+  var url=list[Math.min(i,list.length-1)]||'';
+  return R.createElement('div',{style:Object.assign({position:'relative',width:'100%',aspectRatio:p.ratio||'16/9',background:'#080a12',overflow:'hidden',borderRadius:10},p.style)},
+    R.createElement('img',{src:url,alt:p.alt||'',draggable:false,loading:'lazy',
+      onError:function(){if(i<list.length-1)setI(i+1)},
+      style:{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'contain'}}))
+}
+
+function Term(p){
+  var st=useState(0),tick=st[0],setTick=st[1];
+  useEffect(function(){var i=setInterval(function(){setTick(function(t){return t+1})},1100);return function(){clearInterval(i)}},[]);
+  var seed=p.title+'|'+tick;
+  var lines=useMemo(function(){var a=[],b=hashHex(seed,120);
+    for(var i=0;i<5;i++){a.push(b.slice(i*22,(i+1)*22))}
+    return a},[seed]);
+  return R.createElement('div',{className:'term',style:p.style},
+    R.createElement('div',{className:'termbar'},
+      R.createElement('span',{className:'td',style:{background:'#ff5c5c'}}),
+      R.createElement('span',{className:'td',style:{background:'#ffb020'}}),
+      R.createElement('span',{className:'td',style:{background:'#14e0b0'}}),
+      R.createElement('span',{className:'mono',style:{fontSize:10,letterSpacing:'.14em',textTransform:'uppercase',color:'#8b93ab',marginLeft:8}},p.title||'shell')),
+    R.createElement('div',{style:{padding:'10px 12px'}},
+      p.lines?p.lines.map(function(l,i){return R.createElement('div',{key:i,className:'mono',style:{fontSize:11,color:'#7d8aa8',lineHeight:1.7}},R.createElement('span',{style:{color:'var(--tl)'}},'$ '),l)}):null,
+      R.createElement('div',{className:'hexstream mono'},lines.join(' '))))
+}
+
+/* ============================ MATRIX ============================ */
+function Matrix(){
+  var ref=useRef(null);
+  useEffect(function(){
+    var cv=ref.current;if(!cv)return;
+    var ctx=cv.getContext('2d'),raf,cols,drops,w,h,fs=14,chars='01ABCDEF#$%&@*+=<>/\\|';
+    function resize(){w=cv.width=cv.offsetWidth||600;h=cv.height=cv.offsetHeight||400;cols=Math.floor(w/fs);drops=[];
+      for(var i=0;i<cols;i++)drops.push(Math.random()*40)}
+    resize();window.addEventListener('resize',resize);
+    function draw(){
+      ctx.fillStyle='rgba(5,6,13,0.13)';ctx.fillRect(0,0,w,h);
+      ctx.font=fs+'px JetBrains Mono, monospace';
+      for(var i=0;i<cols;i++){
+        var c=chars[Math.floor(Math.random()*chars.length)];
+        ctx.fillStyle=Math.random()>0.94?'#ffb020':(Math.random()>0.6?'#14e0b0':'#1f8f6e');
+        ctx.fillText(c,i*fs,drops[i]*fs);
+        if(drops[i]*fs>h&&Math.random()>0.975)drops[i]=0;
+        drops[i]++;
+      }
+      raf=requestAnimationFrame(draw);
+    }
+    draw();
+    return function(){cancelAnimationFrame(raf);window.removeEventListener('resize',resize)};
+  },[]);
+  return R.createElement('canvas',{ref:ref,style:{position:'absolute',inset:0,width:'100%',height:'100%'}})
+}
+
+/* ============================ ROUTER ============================ */
+function getRoute(){var h=location.hash.replace(/^#/,'');return h||'/'}
+function nav(r){if(location.hash==='#'+r)return;location.hash='#'+r}
+
+/* ============================ BOOT ============================ */
+function Boot(p){
+  var t=useT().t;
+  var st=useState(0),n=st[0],setN=st[1];
+  useEffect(function(){var i=setInterval(function(){setN(function(x){return x>=8?x:x+1})},230);return function(){clearInterval(i)}},[]);
+  var lines=['boot_l1','boot_l2','boot_l3','boot_l4','boot_l5','boot_l6','boot_l7','boot_l8'].map(function(k){return t(k)});
+  return R.createElement('div',{style:{position:'fixed',inset:0,zIndex:120,background:'#05060d',display:'flex',alignItems:'center',justifyContent:'center',padding:20}},
+    R.createElement('div',{style:{position:'absolute',inset:0,opacity:.55}},R.createElement(Matrix,null)),
+    R.createElement('div',{style:{position:'relative',width:'100%',maxWidth:640}},
+      R.createElement('div',{className:'mono',style:{fontSize:11,letterSpacing:'.2em',color:'var(--au)',marginBottom:12}},'// GUSTAVOEURO · SECURE BOOT'),
+      R.createElement('div',{className:'term'},
+        R.createElement('div',{className:'termbar'},
+          R.createElement('span',{className:'td',style:{background:'#ff5c5c'}}),
+          R.createElement('span',{className:'td',style:{background:'#ffb020'}}),
+          R.createElement('span',{className:'td',style:{background:'#14e0b0'}})),
+        R.createElement('div',{style:{padding:'12px 14px',minHeight:190}},
+          lines.map(function(l,i){return i<n?R.createElement('div',{key:i,className:'mono',style:{fontSize:11.5,color:i===n-1?'var(--tl)':'#7d8aa8',lineHeight:1.9}},'> '+l):null}),
+          n>=8?R.createElement('div',{className:'mono',style:{marginTop:10,fontSize:12,color:'var(--fg)',letterSpacing:'.14em'}},'>> '+t('boot_ready')):null)),
+      R.createElement('div',{style:{marginTop:14,display:'flex',gap:10}},
+        R.createElement(Btn,{variant:'au',onClick:p.onDone,disabled:n<8},t('boot_ready')),
+        R.createElement(Btn,{onClick:p.onDone},t('boot_skip')))))
+}
+
+/* ============================ GATE ============================ */
+var KEY=[71,85,83,84,65,86,79,69,85,82,79];
+function decodeKey(){try{return String.fromCharCode.apply(null,KEY)}catch(e){return 'GUSTAVOEURO'}}
+
+function Gate(p){
+  var t=useT().t;
+  var st=useState(''),v=st[0],setV=st[1];
+  var e2=useState(false),err=e2[0],setErr=e2[1];
+  var sh=useState(false),shake=sh[0],setShake=sh[1];
+  function go(ev){
+    ev.preventDefault();
+    if(v.trim().toUpperCase()===decodeKey()){setErr(false);p.onOk()}
+    else{setErr(true);setShake(true);setTimeout(function(){setShake(false)},450)}
+  }
+  return R.createElement('div',{style:{position:'fixed',inset:0,zIndex:110,background:'#05060d',display:'flex',alignItems:'center',justifyContent:'center',padding:20}},
+    R.createElement('div',{style:{position:'absolute',inset:0,opacity:.4}},R.createElement(Matrix,null)),
+    R.createElement('div',{style:{position:'relative',width:'100%',maxWidth:460,transform:shake?'translateX(3px)':'none',transition:'transform .1s'}},
+      R.createElement('div',{className:'card scanline',style:{padding:24,borderColor:'#2a3044'}},
+        R.createElement('div',{className:'mono',style:{fontSize:10.5,letterSpacing:'.22em',color:'var(--tl)',marginBottom:10}},'// RESTRICTED AREA'),
+        R.createElement('h1',{className:'grad',style:{margin:'0 0 8px',fontSize:26,fontWeight:700,letterSpacing:'-.02em'}},t('gate_title')),
+        R.createElement('p',{style:{margin:'0 0 18px',fontSize:13,color:'#9aa2ba',lineHeight:1.6}},t('gate_sub')),
+        R.createElement('form',{onSubmit:go},
+          R.createElement('input',{className:'inp mono'+(err?' err':''),value:v,autoFocus:true,type:'password',
+            placeholder:t('gate_ph'),onChange:function(e){setV(e.target.value)},
+            style:{letterSpacing:'.3em',textTransform:'uppercase'}}),
+          err?R.createElement('div',{className:'mono',style:{marginTop:8,fontSize:11,color:'var(--rs)'}},'! '+t('gate_err')):null,
+          R.createElement('div',{style:{marginTop:14,display:'flex',gap:10}},
+            R.createElement(Btn,{variant:'au',type:'submit',style:{flex:1}},t('gate_btn')),
+            R.createElement(Btn,{type:'button',onClick:function(){setV(decodeKey())}},'AUTO-FILL'))),
+        R.createElement('div',{className:'mono',style:{marginTop:16,fontSize:10.5,color:'#6d7691',lineHeight:1.7}},
+          t('gate_hint'),R.createElement('br'),'key[11] = '+KEY.join(',')),
+        R.createElement('div',{style:{marginTop:14,display:'flex',gap:14,alignItems:'center'}},
+          R.createElement('div',{className:'sigbars'},[6,12,18,10,16].map(function(h,i){return R.createElement('i',{key:i,style:{height:h,animationDelay:(i*0.1)+'s'}})})),
+          R.createElement('span',{className:'mono',style:{fontSize:10,color:'#6d7691',letterSpacing:'.12em'}},'TUNNEL OK · 3 HOPS')))))
+}
+
+/* ============================ SYSBAR / HEADER ============================ */
+function SysBar(){
+  var t=useT().t;
+  var s=useState({c:14,m:42,p:18,b:137}),d=s[0],setD=s[1];
+  var c=useState(''),cl=c[0],setCl=c[1];
+  useEffect(function(){
+    var i=setInterval(function(){
+      setD(function(o){return {c:Math.max(4,Math.min(92,o.c+(Math.random()*10-5))),m:Math.max(10,Math.min(90,o.m+(Math.random()*8-4))),p:Math.max(6,Math.min(180,o.p+(Math.random()*14-7))),b:o.b+Math.floor(Math.random()*3)}});
+      var n=new Date();
+      setCl(('0'+n.getHours()).slice(-2)+':'+('0'+n.getMinutes()).slice(-2)+':'+('0'+n.getSeconds()).slice(-2));
+    },1000);
+    return function(){clearInterval(i)};
+  },[]);
+  function M(l,v,c){return R.createElement('span',{style:{display:'flex',gap:5,alignItems:'center'}},
+    R.createElement('span',{style:{color:'#5d6людей'.replace('людей','65748')}}),null)}
+  return R.createElement('div',{className:'sysbar'},
+    R.createElement('span',{className:'live'}),
+    R.createElement('span',{style:{color:'var(--rs)'}},t('live')),
+    R.createElement('span',null,'CPU '+d.c.toFixed(0)+'%'),
+    R.createElement('span',null,'MEM '+d.m.toFixed(0)+'%'),
+    R.createElement('span',null,'PING '+d.p.toFixed(0)+'ms'),
+    R.createElement('span',null,t('blocked')+' '+d.b),
+    R.createElement('span',{style:{color:'var(--tl)'}},t('tor')),
+    R.createElement('span',{style:{marginLeft:'auto',color:'#c8cfe0'}},cl))
+}
+
+function Header(p){
+  var t=useT().t;
+  var st=useState(false),open=st[0],setOpen=st[1];
+  var NAV=[['/',t('nav_home')],['/cash',t('nav_cash')],['/paypal',t('nav_paypal')],['/quality',t('nav_quality')],['/trust',t('nav_trust')],['/faq',t('nav_faq')],['/track',t('nav_track')]];
+  return R.createElement(Fragment,null,
+    R.createElement(SysBar,null),
+    R.createElement('header',{className:'hdr'},
+      R.createElement('a',{href:'#/',style:{display:'flex',alignItems:'center',gap:9}},
+        R.createElement('span',{style:{width:26,height:26,borderRadius:7,background:'linear-gradient(135deg,var(--au),var(--mg))',display:'grid',placeItems:'center',color:'#0a0b12',fontWeight:700,fontSize:14}},'€'),
+        R.createElement('span',{className:'mono',style:{fontWeight:700,letterSpacing:'.14em',fontSize:13}},t('brand'))),
+      R.createElement('nav',{className:'navdesk',style:{display:'flex',gap:16,marginLeft:18}},
+        NAV.map(function(n){return R.createElement('a',{key:n[0],href:'#'+n[0],className:'navlink'+(p.route===n[0]?' act':'')},n[1])})),
+      R.createElement('div',{style:{marginLeft:'auto',display:'flex',alignItems:'center',gap:10}},
+        R.createElement('div',{className:'navdesk',style:{display:'flex',gap:4}},
+          LANGS.map(function(l){return R.createElement('button',{key:l,onClick:function(){p.setLang(l)},
+            style:{background:p.lang===l?'rgba(255,176,32,.14)':'transparent',border:'1px solid '+(p.lang===l?'var(--au)':'transparent'),borderRadius:7,padding:'4px 6px',fontSize:14,opacity:p.lang===l?1:.6}},FLAG[l])})),
+        R.createElement('button',{onClick:p.onCart,style:{position:'relative',background:'rgba(255,255,255,.04)',border:'1px solid var(--line)',borderRadius:9,padding:'8px 12px',color:'var(--fg)',fontSize:12,letterSpacing:'.08em'}},
+          t('cart'),p.count>0?R.createElement('span',{style:{position:'absolute',top:-6,right:-6,background:'var(--au)',color:'#0a0b12',borderRadius:999,fontSize:10,fontWeight:700,padding:'1px 6px'}},p.count):null),
+        R.createElement('button',{className:'navmob',onClick:function(){setOpen(true)},style:{background:'transparent',border:'1px solid var(--line)',borderRadius:9,padding:'8px 11px',color:'var(--fg)'}},'☰')),
+    ),
+    open?R.createElement('div',{className:'menu'},
+      R.createElement('button',{onClick:function(){setOpen(false)},style:{position:'absolute',top:34,right:20,background:'transparent',border:'1px solid var(--line)',borderRadius:9,padding:'8px 12px',color:'var(--fg)'}},'✕'),
+      NAV.map(function(n){return R.createElement('a',{key:n[0],href:'#'+n[0],className:'mlink',onClick:function(){setOpen(false)}},n[1])}),
+      R.createElement('a',{href:'#/checkout',className:'mlink',onClick:function(){setOpen(false)}},t('checkout')),
+      R.createElement('div',{style:{display:'flex',gap:8,marginTop:20}},
+        LANGS.map(function(l){return R.createElement('button',{key:l,onClick:function(){p.setLang(l);setOpen(false)},
+          style:{background:p.lang===l?'rgba(255,176,32,.14)':'transparent',border:'1px solid '+(p.lang===l?'var(--au)':'var(--line)'),borderRadius:9,padding:'8px 12px',fontSize:16}},FLAG[l])}))):null)
+}
+
+/* ============================ CART DRAWER ============================ */
+function Drawer(p){
+  var t=useT().t;var items=p.items;
+  var total=items.reduce(function(a,i){return a+i.price*i.qty},0);
+  return R.createElement(Fragment,null,
+    R.createElement('div',{className:'scrim',onClick:p.onClose}),
+    R.createElement('aside',{className:'drawer'},
+      R.createElement('div',{style:{padding:'16px 18px',borderBottom:'1px solid var(--line)',display:'flex',alignItems:'center'}},
+        R.createElement('span',{className:'mono',style:{letterSpacing:'.14em',fontSize:12}},t('cart').toUpperCase()),
+        R.createElement('span',{className:'mono',style:{marginLeft:8,color:'#6d7691',fontSize:11}},'['+items.length+']'),
+        R.createElement('button',{onClick:p.onClose,style:{marginLeft:'auto',background:'transparent',border:0,color:'var(--fg)',fontSize:18}},'✕')),
+      R.createElement('div',{style:{flex:1,overflow:'auto',padding:14}},
+        items.length===0?R.createElement('div',{className:'mono',style:{color:'#6d7691',fontSize:12,padding:20,textAlign:'center'}},t('empty_cart')):
+        items.map(function(i){return R.createElement('div',{key:i.id,className:'card',style:{padding:10,marginBottom:10,display:'flex',gap:10,alignItems:'center'}},
+          R.createElement('div',{style:{width:64,flex:'0 0 64px'}},R.createElement(Img,{src:i.photo,fb:PHOTO.fallbacks,ratio:'16/9'})),
+          R.createElement('div',{style:{flex:1,minWidth:0}},
+            R.createElement('div',{style:{fontSize:12.5,fontWeight:600,whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}},i.name),
+            R.createElement('div',{className:'mono',style:{fontSize:10.5,color:'#6d7691'}},i.sub),
+            R.createElement('div',{className:'mono',style:{fontSize:12,color:'var(--au)',marginTop:3}},'€ '+i.price.toFixed(2))),
+          R.createElement('div',{style:{display:'flex',flexDirection:'column',gap:4,alignItems:'center'}},
+            R.createElement('button',{onClick:function(){p.inc(i.id)},style:{width:24,height:24,background:'rgba(255,255,255,.05)',border:'1px solid var(--line)',borderRadius:6,color:'var(--fg)'}},'+'),
+            R.createElement('span',{className:'mono',style:{fontSize:12}},i.qty),
+            R.createElement('button',{onClick:function(){p.dec(i.id)},style:{width:24,height:24,background:'rgba(255,255,255,.05)',border:'1px solid var(--line)',borderRadius:6,color:'var(--fg)'}},'−'),
+            R.createElement('button',{onClick:function(){p.rm(i.id)},style:{background:'transparent',border:0,color:'var(--rs)',fontSize:10}},'✕'))})),
+      R.createElement('div',{style:{borderTop:'1px solid var(--line)',padding:16}},
+        R.createElement('div',{style:{display:'flex',justifyContent:'space-between',marginBottom:12}},
+          R.createElement('span',{className:'mono',style:{fontSize:12,color:'#9aa2ba',letterSpacing:'.12em'}},t('subtotal')),
+          R.createElement('span',{className:'mono',style:{fontSize:16,fontWeight:700,color:'var(--au)'}},'€ '+total.toFixed(2))),
+        R.createElement('div',{style:{display:'flex',gap:8}},
+          R.createElement(Btn,{variant:'au',style:{flex:1},onClick:function(){p.onClose();nav('/checkout')}},t('checkout')),
+          R.createElement(Btn,{onClick:p.clear},t('clear'))))));
+}
+
+/* ============================ LIGHTBOX ============================ */
+function Lightbox(p){
+  var arr=p.list||[],st=useState(p.start||0),i=st[0],setI=st[1];
+  useEffect(function(){
+    function k(e){if(e.key==='Escape')p.onClose();if(e.key==='ArrowRight')setI(function(x){return (x+1)%arr.length});if(e.key==='ArrowLeft')setI(function(x){return (x-1+arr.length)%arr.length})}
+    window.addEventListener('keydown',k);return function(){window.removeEventListener('keydown',k)};
+  },[arr.length]);
+  return R.createElement('div',{className:'lightbox',onClick:p.onClose},
+    R.createElement('div',{style:{width:'92vw',maxWidth:1100},onClick:function(e){e.stopPropagation()}},
+      R.createElement(Img,{src:arr[i],fb:PHOTO.fallbacks,ratio:'16/10',style:{borderRadius:14}}),
+      R.createElement('div',{style:{display:'flex',justifyContent:'space-between',marginTop:12,alignItems:'center'}},
+        R.createElement(Btn,{onClick:function(){setI(function(x){return (x-1+arr.length)%arr.length})}},'←'),
+        R.createElement('span',{className:'mono',style:{fontSize:11,color:'#8b93ab'}},(i+1)+' / '+arr.length),
+        R.createElement(Btn,{onClick:function(){setI(function(x){return (x+1)%arr.length})}},'→'))))
+}
+
+/* ============================ PRODOTTO CARD ============================ */
+function ProductCard(p){
+  var ctx=useT(),t=ctx.t;var pr=p.p;
+  var ph=photoOf(pr.denom);
+  return R.createElement('div',{className:'card',style:{padding:14,display:'flex',flexDirection:'column',gap:10}},
+    R.createElement('div',{style:{position:'relative'}},
+      R.createElement(Img,{src:ph.main,fb:ph.fb,ratio:'16/9'}),
+      R.createElement('div',{style:{position:'absolute',top:8,left:8}},R.createElement(Badge,{c:pr.c},pr.badge)),
+      pr.kind==='cash'?R.createElement('div',{style:{position:'absolute',top:8,right:8}},R.createElement(Chip,null,pr.denom+' EUR')):null),
+    R.createElement('div',{style:{fontSize:14,fontWeight:700,letterSpacing:'.02em'}},t(pr.n)),
+    R.createElement('div',{style:{fontSize:12,color:'#9aa2ba',lineHeight:1.6,flex:1}},t(pr.d)),
+    pr.kind==='cash'?R.createElement('div',{className:'mono',style:{fontSize:11,color:'#8b93ab'}},pr.pieces+' '+t('pcs')+' × '+pr.denom+' EUR'):null,
+    pr.kind==='paypal'?R.createElement('div',{style:{display:'flex',gap:8}},
+      R.createElement('div',{style:{flex:1}},R.createElement('div',{className:'lbl'},t('pp_pay')),R.createElement('div',{className:'mono',style:{fontSize:14,fontWeight:700}},'€ '+pr.pay)),
+      R.createElement('div',{style:{flex:1}},R.createElement('div',{className:'lbl'},t('pp_recv')),R.createElement('div',{className:'mono',style:{fontSize:14,fontWeight:700,color:'var(--tl)'}},'€ '+pr.recv))):null,
+    R.createElement('div',{className:'mono',style:{fontSize:10,color:'#5d6579',letterSpacing:'.1em'}},t('price_cart')),
+    R.createElement(Btn,{variant:'au',onClick:function(){p.onAdd(pr.id)}},t('add')))
+}
+
+/* ============================ PAGINE ============================ */
+function Hero(){
+  var t=useT().t;
+  return R.createElement('div',{style:{padding:'34px 0 10px'}},
+    R.createElement('div',{className:'mono',style:{fontSize:10.5,letterSpacing:'.24em',color:'var(--tl)',marginBottom:12}},R.createElement(Bracket,{c:'--tl'},t('hero_k'))),
+    R.createElement('h1',{className:'grad',style:{margin:'0 0 14px',fontSize:'clamp(30px,6vw,58px)',lineHeight:1.02,letterSpacing:'-.03em',fontWeight:700}},
+      R.createElement('span',{className:'glitch','data-t':t('hero_t')},t('hero_t'))),
+    R.createElement('p',{style:{margin:'0 0 20px',fontSize:15,color:'#a9b1c7',maxWidth:660,lineHeight:1.75}},t('hero_s')),
+    R.createElement('div',{style:{display:'flex',gap:10,flexWrap:'wrap'}},
+      R.createElement(Btn,{variant:'au',onClick:function(){nav('/cash')}},t('cta1')),
+      R.createElement(Btn,{onClick:function(){nav('/trust')}},t('cta2'))))
+}
+
+function Stats(){
+  var t=useT().t;
+  var d=useState({c:0,m:0}),s=d[0],setS=d[1];
+  useEffect(function(){
+    var i=setInterval(function(){setS(function(o){return{c:Math.min(92,o.c+1),m:Math.min(74,o.m+1)}})},40);
+    return function(){clearInterval(i)};
+  },[]);
+  var items=[[t('stat1'),'12.480'],[t('stat2'),s.c+'%'],[t('stat3'),'< 6h'],[t('stat4'),'0%']];
+  return R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(150px,1fr))',gap:10,marginTop:24}},
+    items.map(function(it,i){return R.createElement('div',{key:i,className:'card',style:{padding:14}},
+      R.createElement('div',{className:'mono',style:{fontSize:20,fontWeight:700,color:['var(--au)','var(--tl)','var(--bl)','var(--mg)'][i]}},it[1]),
+      R.createElement('div',{style:{fontSize:11,color:'#8b93ab',marginTop:4,letterSpacing:'.06em'}},it[0]))}))
+}
+
+function WhyFlow(){
+  var t=useT().t;
+  var why=[['why1t','why1d','--tl'],['why2t','why2d','--bl'],['why3t','why3d','--au'],['why4t','why4d','--mg']];
+  var flow=[['f1','--au'],['f2','--bl'],['f3','--tl'],['f4','--mg']];
+  return R.createElement(Fragment,null,
+    R.createElement('div',{style:{marginTop:44}},
+      R.createElement('h2',{className:'mono',style:{fontSize:13,letterSpacing:'.22em',color:'var(--fg)'}},R.createElement(Bracket,null,t('sec_why'))),
+      R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:12,marginTop:16}},
+        why.map(function(w,i){return R.createElement('div',{key:i,className:'card',style:{padding:16}},
+          R.createElement('div',{className:'mono',style:{fontSize:11,letterSpacing:'.14em',color:'var('+w[2]+')',marginBottom:8}},'▚ '+t(w[0])),
+          R.createElement('div',{style:{fontSize:12.5,color:'#9aa2ba',lineHeight:1.7}},t(w[1])))}))),
+    R.createElement('div',{style:{marginTop:44}},
+      R.createElement('h2',{className:'mono',style:{fontSize:13,letterSpacing:'.22em'}},R.createElement(Bracket,{c:'--tl'},t('flow'))),
+      R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:12,marginTop:16}},
+        flow.map(function(f,i){return R.createElement('div',{key:i,className:'card scanline',style:{padding:16}},
+          R.createElement('div',{className:'mono',style:{fontSize:22,fontWeight:700,color:'var('+f[1]+')'}},'0'+(i+1)),
+          R.createElement('div',{style:{fontSize:13,fontWeight:700,marginTop:6,letterSpacing:'.06em'}},t(f[0])),
+          R.createElement('div',{style:{fontSize:11.5,color:'#8b93ab',marginTop:6,lineHeight:1.6}},t(['flow1_d','flow2_d','flow3_d','flow4_d'][i])))}))))
+}
+
+function TagliDisponibili(){
+  var t=useT().t;
+  var cards=[['den10','den10_d','eur10','--mg'],['den20','den20_d','eur20','--au'],['den50','den50_d','eur50','--bl']];
+  return R.createElement('div',{style:{marginTop:44}},
+    R.createElement('h2',{className:'mono',style:{fontSize:13,letterSpacing:'.22em'}},R.createElement(Bracket,null,t('sec_tagli'))),
+    R.createElement('p',{style:{fontSize:12.5,color:'#8b93ab',marginTop:8}},t('sec_tagli_s')),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:12,marginTop:16}},
+      cards.map(function(c,i){
+        var ph=photoOf(c[2].replace('eur',''));
+        return R.createElement('div',{key:i,className:'card',style:{padding:14}},
+          R.createElement(Img,{src:ph.main,fb:ph.fb,ratio:'16/9'}),
+          R.createElement('div',{style:{marginTop:10,fontSize:14,fontWeight:700,color:'var('+c[3]+')'}},t(c[0])),
+          R.createElement('div',{style:{fontSize:12,color:'#9aa2ba',marginTop:6,lineHeight:1.6}},t(c[1])))}))) 
+}
+
+function Home(){
+  var t=useT().t;
+  var ctx=useT();
+  var b20=PRODUCTS.filter(function(p){return p.denom===20});
+  var b50=PRODUCTS.filter(function(p){return p.denom===50});
+  return R.createElement(Fragment,null,
+    R.createElement(Hero,null),
+    R.createElement(Stats,null),
+    R.createElement(TagliDisponibili,null),
+    R.createElement('div',{style:{marginTop:44}},
+      R.createElement('h2',{className:'mono',style:{fontSize:13,letterSpacing:'.22em'}},R.createElement(Bracket,{c:'--bl'},t('cash_t'))),
+      R.createElement('div',{style:{marginTop:16,display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(250px,1fr))',gap:12}},
+        b20.map(function(p){return R.createElement(ProductCard,{key:p.id,p:p,onAdd:ctx.onAdd})}))),
+    R.createElement('div',{style:{marginTop:30,display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(250px,1fr))',gap:12}},
+      b50.map(function(p){return R.createElement(ProductCard,{key:p.id,p:p,onAdd:ctx.onAdd})})),
+    R.createElement(Section,{style:{marginTop:30,borderColor:'#3a2f12'}},
+      R.createElement('div',{className:'mono',style:{fontSize:11,letterSpacing:'.2em',color:'var(--au)'}},'! '+t('onreq_t')),
+      R.createElement('p',{style:{fontSize:13,color:'#a9b1c7',lineHeight:1.7,margin:'10px 0 14px'}},t('onreq_s')),
+      R.createElement(Btn,{variant:'au',onClick:function(){window.open(ID.tg,'_blank')}},t('onreq_b'))),
+    R.createElement(WhyFlow,null))
+}
+
+function Cash(){
+  var t=useT().t,ctx=useT();
+  var b20=PRODUCTS.filter(function(p){return p.denom===20});
+  var b50=PRODUCTS.filter(function(p){return p.denom===50});
+  return R.createElement(Fragment,null,
+    R.createElement('h1',{className:'grad',style:{fontSize:'clamp(26px,5vw,44px)',margin:'10px 0 8px',fontWeight:700}},t('cash_t')),
+    R.createElement('p',{style:{color:'#9aa2ba',fontSize:14,marginBottom:24}},t('cash_s')),
+    R.createElement('h3',{className:'mono',style:{fontSize:12,letterSpacing:'.2em',color:'var(--au)'}},R.createElement(Bracket,null,'20 EUR')),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(250px,1fr))',gap:12,marginTop:14}},
+      b20.map(function(p){return R.createElement(ProductCard,{key:p.id,p:p,onAdd:ctx.onAdd})})),
+    R.createElement('h3',{className:'mono',style:{fontSize:12,letterSpacing:'.2em',color:'var(--bl)',marginTop:34}},R.createElement(Bracket,{c:'--bl'},'50 EUR')),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(250px,1fr))',gap:12,marginTop:14}},
+      b50.map(function(p){return R.createElement(ProductCard,{key:p.id,p:p,onAdd:ctx.onAdd})})),
+    R.createElement(Section,{style:{marginTop:30,borderColor:'#3a2f12'}},
+      R.createElement('div',{className:'mono',style:{fontSize:11,letterSpacing:'.2em',color:'var(--au)'}},'! '+t('onreq_t')),
+      R.createElement('p',{style:{fontSize:13,color:'#a9b1c7',lineHeight:1.7,margin:'10px 0 14px'}},t('onreq_s')),
+      R.createElement(Btn,{variant:'au',onClick:function(){window.open(ID.tg,'_blank')}},t('onreq_b'))))
+}
+
+function Paypal(){
+  var t=useT().t,ctx=useT();
+  var pp=PRODUCTS.filter(function(p){return p.kind==='paypal'});
+  return R.createElement(Fragment,null,
+    R.createElement('h1',{className:'grad',style:{fontSize:'clamp(26px,5vw,44px)',margin:'10px 0 8px',fontWeight:700}},t('pp_t')),
+    R.createElement('p',{style:{color:'#9aa2ba',fontSize:14,marginBottom:14,maxWidth:700,lineHeight:1.7}},t('pp_s')),
+    R.createElement('div',{className:'mono',style:{fontSize:11.5,color:'var(--tl)',marginBottom:24}},R.createElement(Bracket,{c:'--tl'},t('pp_note'))),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(250px,1fr))',gap:12}},
+      pp.map(function(p){return R.createElement(ProductCard,{key:p.id,p:p,onAdd:ctx.onAdd})})))
+}
+
+function Quality(){
+  var t=useT().t;
+  var st=useState('20'),f=st[0],setF=st[1];
+  var lb=useState(null),light=lb[0],setLight=lb[1];
+  var list=PHOTO['eur'+f].gallery;
+  return R.createElement(Fragment,null,
+    R.createElement('h1',{className:'grad',style:{fontSize:'clamp(26px,5vw,44px)',margin:'10px 0 8px',fontWeight:700}},t('q_t')),
+    R.createElement('p',{style:{color:'#9aa2ba',fontSize:14,marginBottom:18}},t('q_s')),
+    R.createElement('div',{style:{display:'flex',gap:8,flexWrap:'wrap',marginBottom:16}},
+      ['20','50'].map(function(k){return R.createElement(Btn,{key:k,variant:f===k?'au':'',onClick:function(){setF(k)}},t('q'+k))}),
+      R.createElement('span',{className:'mono',style:{fontSize:11,color:'#6d7691',alignSelf:'center',marginLeft:6}},t('q_hint'))),
+    R.createElement('div',{style:{display:'flex',gap:8,flexWrap:'wrap',marginBottom:18}},
+      [['b_grade','--au'],['b_uv','--bl'],['b_scan','--tl'],['b_fiber','--mg']].map(function(b,i){return R.createElement(Badge,{key:i,c:b[1]},t(b[0]))})),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:12}},
+      list.map(function(src,i){return R.createElement('div',{key:i,className:'galitem',onClick:function(){setLight(i)}},
+        R.createElement(Img,{src:src,fb:PHOTO.fallbacks,ratio:'16/10'}),
+        R.createElement('div',{className:'mono',style:{fontSize:10,padding:'6px 8px',color:'#6d7691',letterSpacing:'.1em'}},'IMG_'+String(i+1).padStart(2,'0')+' · '+f+' EUR'))})),
+    R.createElement(Term,{title:'quality-scan',style:{marginTop:20}}),
+    light!==null?R.createElement(Lightbox,{list:list,start:light,onClose:function(){setLight(null)}}):null)
+}
+
+function Trust(){
+  var t=useT().t;
+  var items=[['t1t','t1d','--au',ID.pgp],['t2t','t2d','--tl','SHA-256'],['t3t','t3d','--mg',ID.onion],['t4t','t4d','--bl',ID.couriers.join(' · ')]];
+  return R.createElement(Fragment,null,
+    R.createElement('h1',{className:'grad',style:{fontSize:'clamp(26px,5vw,44px)',margin:'10px 0 8px',fontWeight:700}},t('t_t')),
+    R.createElement('p',{style:{color:'#9aa2ba',fontSize:14,marginBottom:24}},t('t_s')),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:12}},
+      items.map(function(it,i){return R.createElement(Section,{key:i},
+        R.createElement('div',{className:'mono',style:{fontSize:11,letterSpacing:'.16em',color:'var('+it[2]+')',marginBottom:8}},'▚ '+t(it[0])),
+        R.createElement('p',{style:{fontSize:12.5,color:'#9aa2ba',lineHeight:1.7,margin:'0 0 10px'}},t(it[1])),
+        R.createElement('div',{className:'mono',style:{fontSize:11,color:'#c8cfe0',wordBreak:'break-all',background:'#080a12',border:'1px solid var(--line)',borderRadius:8,padding:'8px 10px'}},it[3]))})),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:12,marginTop:12}},
+      R.createElement(Section,null,
+        R.createElement('div',{className:'mono',style:{fontSize:11,letterSpacing:'.16em',color:'var(--tl)',marginBottom:10}},'▚ NODE TELEMETRY'),
+        R.createElement('div',{style:{display:'flex',gap:18,alignItems:'center'}},
+          R.createElement('div',{className:'radar'}),
+          R.createElement('div',{className:'mono',style:{fontSize:11,color:'#8b93ab',lineHeight:2}},
+            R.createElement('div',null,'onion ......... OK'),R.createElement('div',null,'pgp ........... OK'),
+            R.createElement('div',null,'dns-leak ...... NONE'),R.createElement('div',null,'tls ........... 1.3')))),
+      R.createElement(Section,null,
+        R.createElement('div',{className:'mono',style:{fontSize:11,letterSpacing:'.16em',color:'var(--bl)',marginBottom:10}},'▚ CHANNELS'),
+        R.createElement('div',{style:{display:'flex',flexDirection:'column',gap:8}},
+          R.createElement('a',{href:ID.tg,target:'_blank',className:'btn',style:{justifyContent:'space-between'}},'TELEGRAM @gustavoeuro','→'),
+          R.createElement('a',{href:ID.ch,target:'_blank',className:'btn',style:{justifyContent:'space-between'}},'CANALE BROADCAST','→'),
+          R.createElement('div',{className:'btn',style:{justifyContent:'space-between'}},ID.onion,'ONION')))))
+}
+
+function Faq(){
+  var t=useT().t;
+  var st=useState(-1),o=st[0],setO=st[1];
+  var qs=[1,2,3,4,5,6];
+  return R.createElement(Fragment,null,
+    R.createElement('h1',{className:'grad',style:{fontSize:'clamp(26px,5vw,44px)',margin:'10px 0 8px',fontWeight:700}},t('fq_t')),
+    R.createElement('p',{style:{color:'#9aa2ba',fontSize:14,marginBottom:24}},t('fq_s')),
+    qs.map(function(i){return R.createElement(Section,{key:i,style:{marginBottom:10,cursor:'pointer'},onClick:function(){setO(o===i?-1:i)}},
+      R.createElement('div',{style:{display:'flex',gap:12,alignItems:'center'}},
+        R.createElement('span',{className:'mono',style:{color:'var(--au)',fontSize:12}},'Q'+i),
+        R.createElement('span',{style:{fontSize:14,fontWeight:600,flex:1}},t('q'+i)),
+        R.createElement('span',{className:'mono',style:{color:'#6d7691'}},o===i?'−':'+')),
+      o===i?R.createElement('p',{style:{fontSize:13,color:'#9aa2ba',lineHeight:1.75,margin:'12px 0 0',paddingLeft:26}},t('a'+i)):null)}))
+}
+
+function Track(){
+  var t=useT().t;
+  var st=useState(''),code=st[0],setCode=st[1];
+  var rs=useState(null),res=rs[0],setRes=rs[1];
+  function go(){
+    var all=store.jget('ge-orders',[]);if(!Array.isArray(all))all=[];
+    var f=all.filter(function(o){return o.code.toUpperCase()===code.trim().toUpperCase()})[0];
+    setRes(f||false);
+  }
+  return R.createElement(Fragment,null,
+    R.createElement('h1',{className:'grad',style:{fontSize:'clamp(26px,5vw,44px)',margin:'10px 0 8px',fontWeight:700}},t('tr_t')),
+    R.createElement('p',{style:{color:'#9aa2ba',fontSize:14,marginBottom:20}},t('tr_s')),
+    R.createElement('div',{style:{display:'flex',gap:10,flexWrap:'wrap',maxWidth:520}},
+      R.createElement('input',{className:'inp mono',placeholder:t('tr_ph'),value:code,onChange:function(e){setCode(e.target.value)},style:{flex:1,minWidth:200}}),
+      R.createElement(Btn,{variant:'au',onClick:go},t('tr_btn'))),
+    R.createElement('div',{className:'mono',style:{fontSize:11,color:'#6d7691',marginTop:10}},t('tr_note')),
+    res===false?R.createElement(Section,{style:{marginTop:20,borderColor:'#3a1f1f'}},R.createElement('div',{className:'mono',style:{color:'var(--rs)',fontSize:12}},'! '+t('tr_nf'))):null,
+    res?R.createElement(Section,{style:{marginTop:20}},
+      R.createElement('div',{className:'mono',style:{fontSize:11,letterSpacing:'.18em',color:'var(--tl)'}},'✓ '+t('tr_found')),
+      R.createElement('div',{className:'mono',style:{fontSize:18,fontWeight:700,margin:'10px 0'}},res.code),
+      R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(140px,1fr))',gap:10,marginTop:12}},
+        R.createElement('div',null,R.createElement('div',{className:'lbl'},t('tr_total')),R.createElement('div',{className:'mono'},'€ '+Number(res.total).toFixed(2))),
+        R.createElement('div',null,R.createElement('div',{className:'lbl'},t('tr_status')),R.createElement('div',{className:'mono',style:{color:'var(--au)'}},res.status)),
+        R.createElement('div',null,R.createElement('div',{className:'lbl'},'DATA'),R.createElement('div',{className:'mono'},res.date))),
+      R.createElement('div',{className:'lbl',style:{marginTop:16}},t('tr_items')),
+      res.items.map(function(i,k){return R.createElement('div',{key:k,className:'mono',style:{fontSize:12,color:'#9aa2ba',padding:'4px 0',borderBottom:'1px solid var(--line)'}},i.qty+' × '+i.name+' — € '+(i.price*i.qty).toFixed(2))}),
+      R.createElement(Term,{title:'order-verify',style:{marginTop:16}})):null)
+}
+
+function Feedback(){
+  var t=useT().t;
+  var st=useState({name:'',contact:'',msg:''}),f=st[0],setF=st[1];
+  var ok=useState(false),done=ok[0],setDone=ok[1];
+  function send(e){e.preventDefault();if(!f.name||!f.msg)return;store.jset('ge-fb',f);setDone(true)}
+  return R.createElement(Fragment,null,
+    R.createElement('h1',{className:'grad',style:{fontSize:'clamp(26px,5vw,44px)',margin:'10px 0 8px',fontWeight:700}},t('fb_t')),
+    R.createElement('p',{style:{color:'#9aa2ba',fontSize:14,marginBottom:20}},t('fb_s')),
+    done?R.createElement(Section,{style:{borderColor:'#123a30'}},
+      R.createElement('div',{className:'mono',style:{color:'var(--tl)',fontSize:13}},'✓ '+t('fb_ok')),
+      R.createElement('div',{style:{marginTop:12}},R.createElement(Btn,{onClick:function(){window.open(ID.tg,'_blank')}},t('fb_tg')))):
+    R.createElement('form',{onSubmit:send,style:{maxWidth:560,display:'flex',flexDirection:'column',gap:14}},
+      R.createElement('div',null,R.createElement('label',{className:'lbl'},t('fb_name')),R.createElement('input',{className:'inp',value:f.name,onChange:function(e){setF(Object.assign({},f,{name:e.target.value}))}})),
+      R.createElement('div',null,R.createElement('label',{className:'lbl'},t('fb_contact')),R.createElement('input',{className:'inp',value:f.contact,onChange:function(e){setF(Object.assign({},f,{contact:e.target.value}))}})),
+      R.createElement('div',null,R.createElement('label',{className:'lbl'},t('fb_msg')),R.createElement('textarea',{className:'inp',rows:5,value:f.msg,onChange:function(e){setF(Object.assign({},f,{msg:e.target.value}))}})),
+      R.createElement(Btn,{variant:'au',type:'submit'},t('fb_send'))))
+}
+
+function Legal(p){
+  var t=useT().t;
+  return R.createElement(Fragment,null,
+    R.createElement('h1',{className:'grad',style:{fontSize:'clamp(24px,4vw,38px)',margin:'10px 0 16px',fontWeight:700}},t(p.k+'_t')),
+    R.createElement(Section,null,R.createElement('p',{style:{fontSize:13.5,color:'#a9b1c7',lineHeight:1.9,margin:0}},t(p.k+'_b'))),
+    R.createElement(Term,{title:'legal-'+p.k,style:{marginTop:16}}))
+}
+
+/* ============================ PAYMENT PANELS ============================ */
+function CryptoPanel(p){
+  var t=useT().t;
+  var st=useState('SOL'),net=st[0],setNet=st[1];
+  var c=CRYPTO[net];
+  var amt=(p.total/c.rate);
+  var left=useState(1800),sec=left[0],setSec=left[1];
+  var conf=useState(0),cf=conf[0],setCf=conf[1];
+  useEffect(function(){
+    var i=setInterval(function(){setSec(function(x){return x>0?x-1:0})},1000);
+    var j=setInterval(function(){setCf(function(x){return x>=c.conf?c.conf:x+1})},2600);
+    return function(){clearInterval(i);clearInterval(j)};
+  },[net]);
+  useEffect(function(){setSec(1800);setCf(0)},[net]);
+  var mm=Math.floor(sec/60),ss=('0'+(sec%60)).slice(-2);
+  var pct=sec/1800*100;
+  var memo='GE-'+String(p.order||'').slice(-8);
+  var txhash=hashHex(c.addr+amt.toFixed(8),64);
+  function copy(v){try{navigator.clipboard.writeText(v)}catch(e){}}
+  return R.createElement('div',{style:{display:'flex',flexDirection:'column',gap:14}},
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:10}},
+      Object.keys(CRYPTO).map(function(k){var x=CRYPTO[k];return R.createElement('div',{key:k,onClick:function(){setNet(k)},
+        className:'card',style:{padding:12,cursor:'pointer',borderColor:net===k?'var('+x.c+')':'var(--line)',background:net===k?'rgba(255,255,255,.04)':'transparent'}},
+        R.createElement('div',{style:{display:'flex',alignItems:'center',gap:8}},
+          R.createElement('span',{style:{fontSize:20,color:'var('+x.c+')'}},x.logo),
+          R.createElement('span',{style:{fontWeight:700,fontSize:13}},x.sym),
+          net===k?R.createElement('span',{className:'mono',style:{marginLeft:'auto',fontSize:9,color:'var(--tl)'}},'● SEL'):null),
+        R.createElement('div',{className:'mono',style:{fontSize:10,color:'#6d7691',marginTop:6}},x.time+' · '+x.conf+' conf'),
+        R.createElement(Badge,{c:x.c,style:{marginTop:6}},t('fees0')))}),
+    R.createElement('div',{style:{background:'rgba(255,176,32,.08)',border:'1px solid rgba(255,176,32,.35)',borderRadius:10,padding:'10px 12px'}},
+      R.createElement('div',{className:'mono',style:{fontSize:11.5,color:'var(--au)',letterSpacing:'.08em'}},'! '+t('only').replace('{S}',c.sym))),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'minmax(200px,260px) 1fr',gap:16}},
+      R.createElement('div',{className:'card scanline',style:{padding:12}},
+        R.createElement('div',{className:'lbl'},t('scan')),
+        R.createElement(Img,{src:PHOTO.qr[net],fb:[qrUrl(net)],ratio:'1/1'})),
+      R.createElement('div',{style:{display:'flex',flexDirection:'column',gap:10}},
+        R.createElement('div',null,
+          R.createElement('div',{className:'lbl'},t('addr')),
+          R.createElement('div',{style:{display:'flex',gap:8,alignItems:'center'}},
+            R.createElement('div',{className:'mono',style:{flex:1,fontSize:11.5,wordBreak:'break-all',background:'#080a12',border:'1px solid var(--line)',borderRadius:9,padding:'9px 10px',color:'#c8cfe0'}},c.addr),
+            R.createElement(Btn,{onClick:function(){copy(c.addr)}},t('copy')))),
+        R.createElement('div',{style:{display:'flex',gap:8,flexWrap:'wrap'}},
+          R.createElement(Badge,{c:'--tl'},'✓ '+t('verif')),
+          R.createElement(Chip,null,'PGP '+ID.pgp.slice(0,9)+'…'),
+          R.createElement(Chip,null,c.net)),
+        R.createElement('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10}},
+          R.createElement('div',null,R.createElement('div',{className:'lbl'},t('amount')),
+            R.createElement('div',{className:'mono',style:{fontSize:15,fontWeight:700,color:'var(--au)'}},amt.toFixed(8)+' '+c.sym)),
+          R.createElement('div',null,R.createElement('div',{className:'lbl'},t('conf')),
+            R.createElement('div',{className:'mono',style:{fontSize:15,fontWeight:700,color:'var(--tl)'}},c.conf+' / '+c.conf))),
+        c.memo?R.createElement('div',null,R.createElement('div',{className:'lbl'},t('memo')),
+          R.createElement('div',{style:{display:'flex',gap:8}},
+            R.createElement('div',{className:'mono',style:{flex:1,background:'#080a12',border:'1px solid var(--line)',borderRadius:9,padding:'9px 10px',fontSize:12}},memo),
+            R.createElement(Btn,{onClick:function(){copy(memo)}},t('copy')))):null,
+        R.createElement('div',null,
+          R.createElement('div',{className:'lbl'},t('exp')+' — '+mm+':'+ss),
+          R.createElement('div',{className:'progress'},R.createElement('i',{style:{width:pct+'%',background:sec<300?'linear-gradient(90deg,#ff5c5c,#ff8c8c)':'linear-gradient(90deg,var(--tl),var(--bl))'}}))),
+        R.createElement('div',null,
+          R.createElement('div',{className:'lbl'},t('conf')+' TRACKER'),
+          R.createElement('div',{style:{display:'flex',gap:6}},
+            Array.from({length:c.conf}).map(function(_,i){return R.createElement('div',{key:i,style:{flex:1,height:8,borderRadius:4,background:i<cf?'var(--tl)':'#141828',transition:'.3s'}})}))),
+        R.createElement('a',{href:c.exp+c.addr,target:'_blank',className:'btn',style:{justifyContent:'space-between'}},t('explorer'),'→'))),
+    R.createElement(Term,{title:'tx-preview · '+c.sym,lines:[
+      'to      : '+c.addr.slice(0,24)+'…',
+      'amount  : '+amt.toFixed(8)+' '+c.sym,
+      'fee est : network',
+      'memo    : '+(c.memo?memo:'—')
+    ]}),
+    R.createElement('div',{className:'mono',style:{fontSize:10.5,color:'#5d6579'}},t('txprev')+': '+txhash.slice(0,40)+'…'))
+}
+
+function SepaPanel(p){
+  var t=useT().t;
+  var fee=p.total*0.10, tot=p.total+fee;
+  var iban='IT60 X054 2811 1010 0000 0123 456';
+  var causal='GE-'+String(p.order||'');
+  var st=useState(1799),sec=st[0],setSec=st[1];
+  useEffect(function(){var i=setInterval(function(){setSec(function(x){return x>0?x-1:0})},1000);return function(){clearInterval(i)}},[]);
+  var mm=Math.floor(sec/60),ss=('0'+(sec%60)).slice(-2);
+  function copy(v){try{navigator.clipboard.writeText(v)}catch(e){}}
+  return R.createElement('div',{style:{display:'flex',flexDirection:'column',gap:14}},
+    R.createElement('div',{style:{display:'flex',gap:8,flexWrap:'wrap',alignItems:'center'}},
+      R.createElement(Badge,{c:'--bl'},'⚡ '+t('sepa_badge')),
+      R.createElement(Badge,{c:'--au'},t('sepa_warn')),
+      R.createElement(Chip,null,'EU / SEPA ZONE'),
+      R.createElement(Chip,null,'T+0')),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:12}},
+      R.createElement('div',{className:'card',style:{padding:14}},
+        R.createElement('div',{className:'lbl'},t('sepa_iban')),
+        R.createElement('div',{style:{display:'flex',gap:8}},
+          R.createElement('div',{className:'mono',style:{flex:1,background:'#080a12',border:'1px solid var(--line)',borderRadius:9,padding:'10px',fontSize:12,wordBreak:'break-all'}},iban),
+          R.createElement(Btn,{onClick:function(){copy(iban)}},t('copy'))),
+        R.createElement('div',{className:'mono',style:{fontSize:10.5,color:'#6d7691',marginTop:8}},t('sepa_note')),
+        R.createElement('div',{className:'lbl',style:{marginTop:14}},t('sepa_causal')),
+        R.createElement('div',{style:{display:'flex',gap:8}},
+          R.createElement('div',{className:'mono',style:{flex:1,background:'#080a12',border:'1px solid var(--line)',borderRadius:9,padding:'10px',fontSize:12,color:'var(--au)'}},causal),
+          R.createElement(Btn,{onClick:function(){copy(causal)}},t('copy'))),
+        R.createElement('div',{className:'lbl',style:{marginTop:14}},t('exp')+' — '+mm+':'+ss),
+        R.createElement('div',{className:'progress'},R.createElement('i',{style:{width:(sec/1799*100)+'%'}}))),
+      R.createElement('div',{className:'card',style:{padding:14}},
+        R.createElement('div',{className:'lbl'},t('brk_amt')),R.createElement('div',{className:'mono',style:{fontSize:14}}, '€ '+p.total.toFixed(2)),
+        R.createElement('div',{className:'lbl',style:{marginTop:10}},t('brk_fee')),R.createElement('div',{className:'mono',style:{fontSize:14,color:'var(--au)'}},'€ '+fee.toFixed(2)),
+        R.createElement('div',{className:'hairline',style:{margin:'12px 0'}}),
+        R.createElement('div',{className:'lbl'},t('brk_tot')),R.createElement('div',{className:'mono',style:{fontSize:20,fontWeight:700,color:'var(--tl)'}},'€ '+tot.toFixed(2)),
+        R.createElement('div',{style:{display:'flex',gap:8,flexWrap:'wrap',marginTop:12}},
+          R.createElement(Badge,{c:'--tl'},'✓ BONIFICO TRACCIATO'),R.createElement(Badge,{c:'--bl'},'IBAN EU')))),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:10}},
+      [1,2,3,4].map(function(i){return R.createElement('div',{key:i,className:'card',style:{padding:12}},
+        R.createElement('div',{className:'mono',style:{fontSize:18,fontWeight:700,color:'var(--bl)'}},'0'+i),
+        R.createElement('div',{style:{fontSize:12,color:'#9aa2ba',marginTop:6,lineHeight:1.6}},t('st'+i)))}),
+    ),
+    R.createElement(Term,{title:'sepa-instant',lines:['rail    : SEPA INSTANT','settle  : T+0','handling: +10%','total   : € '+tot.toFixed(2)]}))
+}
+
+function AmzPanel(p){
+  var t=useT().t;
+  var fee=p.total*0.20, tot=p.total+fee;
+  var st=useState('IT'),reg=st[0],setReg=st[1];
+  var c=useState(''),code=c[0],setCode=c[1];
+  function fmt(v){var d=v.replace(/\D/g,'').slice(0,15);var o=[];for(var i=0;i<d.length;i+=5)o.push(d.slice(i,i+5));return o.join('-')}
+  var digits=code.replace(/\D/g,'');
+  var valid=digits.length===15;
+  function copy(v){try{navigator.clipboard.writeText(v)}catch(e){}}
+  return R.createElement('div',{style:{display:'flex',flexDirection:'column',gap:14}},
+    R.createElement('div',{style:{display:'flex',gap:8,flexWrap:'wrap',alignItems:'center'}},
+      R.createElement(Badge,{c:'--mg'},'▤ '+t('amz_badge')),
+      R.createElement(Badge,{c:'--au'},t('amz_warn')),
+      R.createElement(Chip,null,'GIFT CARD')),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:12}},
+      R.createElement('div',{className:'card',style:{padding:14}},
+        R.createElement('div',{className:'lbl'},t('amz_region')),
+        R.createElement('div',{style:{display:'flex',gap:6}},
+          ['IT','DE','FR','ES'].map(function(r){return R.createElement(Btn,{key:r,variant:reg===r?'au':'',onClick:function(){setReg(r)},style:{padding:'8px 12px'}},FLAG[{IT:'it',DE:'de',FR:'fr',ES:'es'}[r]]+' '+r)})),
+        R.createElement('div',{className:'lbl',style:{marginTop:14}},t('amz_code')),
+        R.createElement('input',{className:'inp mono',value:code,onChange:function(e){setCode(fmt(e.target.value))},placeholder:'XXXXX-XXXXX-XXXXX',style:{letterSpacing:'.16em'}}),
+        R.createElement('div',{className:'mono',style:{fontSize:10.5,marginTop:8,color:valid?'var(--tl)':'var(--rs)'}},
+          (valid?'✓ ':'! ')+t('amz_checksum')+': '+hx(h32(digits||'0'),8).toUpperCase()+' · '+(valid?t('amz_code_ok'):t('amz_code_ko'))),
+        R.createElement('div',{style:{display:'flex',gap:8,marginTop:12}},
+          R.createElement(Btn,{onClick:function(){copy(digits)}},t('copy')),
+          R.createElement(Btn,{variant:'au',onClick:function(){window.open(ID.tg,'_blank')}},t('onreq_b')))),
+      R.createElement('div',{className:'card',style:{padding:14}},
+        R.createElement('div',{className:'lbl'},t('brk_val')),R.createElement('div',{className:'mono',style:{fontSize:14}},'€ '+p.total.toFixed(2)),
+        R.createElement('div',{className:'lbl',style:{marginTop:10}},t('brk_fee')),R.createElement('div',{className:'mono',style:{fontSize:14,color:'var(--au)'}},'€ '+fee.toFixed(2)),
+        R.createElement('div',{className:'hairline',style:{margin:'12px 0'}}),
+        R.createElement('div',{className:'lbl'},t('brk_tot')),R.createElement('div',{className:'mono',style:{fontSize:20,fontWeight:700,color:'var(--tl)'}},'€ '+tot.toFixed(2)),
+        R.createElement('div',{style:{display:'flex',gap:8,flexWrap:'wrap',marginTop:12}},
+          R.createElement(Badge,{c:'--mg'},'AMAZON'),R.createElement(Badge,{c:'--bl'},'REGION '+reg)))),
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:10}},
+      [1,2,3].map(function(i){return R.createElement('div',{key:i,className:'card',style:{padding:12}},
+        R.createElement('div',{className:'mono',style:{fontSize:18,fontWeight:700,color:'var(--mg)'}},'0'+i),
+        R.createElement('div',{style:{fontSize:12,color:'#9aa2ba',marginTop:6,lineHeight:1.6}},t('at'+i)))}),),
+    R.createElement(Term,{title:'amazon-voucher',lines:['region  : '+reg,'value   : € '+p.total.toFixed(2),'convert : +20%','total   : € '+tot.toFixed(2)]}))
+}
+
+/* ============================ CHECKOUT ============================ */
+function Checkout(p){
+  var t=useT().t;
+  var items=p.items;
+  var onlyPP=items.length>0&&items.every(function(i){return i.kind==='paypal'});
+  var st=useState(1),step=st[0],setStep=st[1];
+  var f=useState({name:'',email:'',phone:'',addr:'',city:'',zip:'',country:'IT',notes:'',ppmail:'',ppmail2:''}),form=f[0],setForm=f[1];
+  var er=useState({}),errs=er[0],setErrs=er[1];
+  var m=useState('crypto'),meth=m[0],setMeth=m[1];
+  var done=useState(false),ok=done[0],setOk=done[1];
+  var proc=useState(false),processing=proc[0],setProc=proc[1];
+  var ord=useState(null),order=ord[0],setOrder=ord[1];
+  var total=items.reduce(function(a,i){return a+i.price*i.qty},0);
+  var draft=useMemo(function(){return 'DRF-'+hashHex(items.map(function(i){return i.id+i.qty}).join('')+total,8).toUpperCase()},[items,total]);
+  var sess=useMemo(function(){return 'SES-'+hashHex(String(Date.now()),12).toUpperCase()},[]);
+  var fp=useMemo(function(){return hashHex((navigator.userAgent||'')+(screen.width||0)+(navigator.language||'')+(new Date().getTimezoneOffset()),16).toUpperCase()},[]);
+
+  function set(k,v){setForm(Object.assign({},form,{[k]:v}))}
+  function validate(){
+    var e={};
+    if(!onlyPP){['name','email','addr','city','zip'].forEach(function(k){if(!form[k]||!form[k].trim())e[k]=1})}
+    if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(form.email||'')&&!onlyPP)e.email=1;
+    if(onlyPP){
+      if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(form.ppmail||''))e.ppmail=1;
+      if((form.ppmail||'').toLowerCase()!==(form.ppmail2||'').toLowerCase())e.ppmail2=2;
+      if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(form.ppmail||''))e.email=1;
+    } else {
+      if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(form.ppmail||''))e.ppmail=1;
+      if((form.ppmail||'').toLowerCase()!==(form.ppmail2||'').toLowerCase())e.ppmail2=2;
+    }
+    setErrs(e);return Object.keys(e).length===0;
+  }
+  function next(){if(step===1&&!validate())return;setStep(function(s){return Math.min(4,s+1)})}
+  function back(){setStep(function(s){return Math.max(1,s-1)})}
+  function build(){
+    var code='GST-'+items.map(function(i){return byId(i.id)?byId(i.id).tag:i.id}).join('-')+'-'+rand4();
+    var o={code:code,date:new Date().toLocaleString(),total:total,status:'IN ATTESA DI PAGAMENTO',
+      items:items.map(function(i){return {name:i.name,qty:i.qty,price:i.price}}),method:meth,
+      manifest:hashHex(code+total,64),checksum:hashHex(code+JSON.stringify(items),32).toUpperCase()};
+    var all=store.jget('ge-orders',[]);if(!Array.isArray(all))all=[];
+    all.unshift(o);store.jset('ge-orders',all.slice(0,60));
+    return o;
+  }
+  function confirm(){
+    setProc(true);
+    setTimeout(function(){var o=build();setOrder(o);setProc(false);setOk(true);setStep(4);p.clear()},2100);
+  }
+  function receipt(){
+    var txt='===== GUSTAVOEURO · '+t('receipt')+' =====\n\n'+t('order_code')+': '+order.code+'\nDATA: '+order.date+'\n'+t('total')+': EUR '+order.total.toFixed(2)+'\n'+t('pm_'+meth)+'\n\nMANIFEST: '+order.manifest+'\nCHECKSUM: '+order.checksum+'\nPGP: '+ID.pgp+'\nONION: '+ID.onion+'\n\nARTICOLI:\n'+order.items.map(function(i){return ' - '+i.qty+' x '+i.name+' = EUR '+(i.price*i.qty).toFixed(2)}).join('\n')+'\n\nTelegram: '+ID.tg+'\n';
+    try{var b=new Blob([txt],{type:'text/plain'});var u=URL.createObjectURL(b);var a=document.createElement('a');a.href=u;a.download=order.code+'.txt';a.click();URL.revokeObjectURL(u)}catch(e){}
+  }
+
+  if(items.length===0&&!ok) return R.createElement(Fragment,null,
+    R.createElement('h1',{className:'grad',style:{fontSize:'clamp(26px,5vw,44px)',margin:'10px 0 8px',fontWeight:700}},t('co_t')),
+    R.createElement(Section,null,R.createElement('div',{className:'mono',style:{color:'#9aa2ba'}},t('co_empty'))))
+
+  var steps=['s1','s2','s3','s4'];
+  return R.createElement(Fragment,null,
+    R.createElement('h1',{className:'grad',style:{fontSize:'clamp(26px,5vw,44px)',margin:'10px 0 14px',fontWeight:700}},t('co_t')),
+    R.createElement('div',{style:{display:'flex',gap:12,flexWrap:'wrap',marginBottom:20}},
+      steps.map(function(s,i){var n=i+1;return R.createElement('div',{key:s,className:'step'+(step===n?' act':(step>n?' done':''))},
+        R.createElement('span',{className:'stepnum'},step>n?'✓':n),t(s)})),
+    step===1?R.createElement(Section,null,
+      onlyPP?R.createElement('div',{className:'mono',style:{fontSize:11.5,color:'var(--tl)',marginBottom:14}},R.createElement(Bracket,{c:'--tl'},t('pp_only'))):
+        R.createElement('div',{className:'mono',style:{fontSize:11.5,color:'var(--au)',marginBottom:14}},R.createElement(Bracket,null,t('mixed_note'))),
+      !onlyPP?R.createElement(Fragment,null,
+        R.createElement('h3',{className:'mono',style:{fontSize:11,letterSpacing:'.18em',color:'var(--fg)',marginBottom:12}},t('ship_t')),
+        R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:12}},
+          [['name','f_name'],['email','f_email'],['phone','f_phone'],['addr','f_addr'],['city','f_city'],['zip','f_zip']].map(function(x){
+            return R.createElement('div',{key:x[0]},
+              R.createElement('label',{className:'lbl'},t(x[1])),
+              R.createElement('input',{className:'inp'+(errs[x[0]]?' err':''),value:form[x[0]],onChange:function(e){set(x[0],e.target.value)}}))}),
+          R.createElement('div',null,R.createElement('label',{className:'lbl'},t('f_country')),
+            R.createElement('select',{className:'inp',value:form.country,onChange:function(e){set('country',e.target.value)}},
+              ID.prefixes.map(function(_,i){return R.createElement('option',{key:i,value:ID.prefixes[i]},ID.prefixes[i])}))),
+          R.createElement('div',{style:{gridColumn:'1/-1'}},R.createElement('label',{className:'lbl'},t('f_notes')),
+            R.createElement('textarea',{className:'inp',rows:2,value:form.notes,onChange:function(e){set('notes',e.target.value)}})))),
+        R.createElement('h3',{className:'mono',style:{fontSize:11,letterSpacing:'.18em',margin:'18px 0 12px'}},t('f_ppmail').toUpperCase()),
+        R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:12}},
+          R.createElement('div',null,R.createElement('label',{className:'lbl'},t('f_ppmail')),
+            R.createElement('input',{className:'inp'+(errs.ppmail?' err':''),value:form.ppmail,onChange:function(e){set('ppmail',e.target.value)}})),
+          R.createElement('div',null,R.createElement('label',{className:'lbl'},t('f_ppmail2')),
+            R.createElement('input',{className:'inp'+(errs.ppmail2?' err':''),value:form.ppmail2,onChange:function(e){set('ppmail2',e.target.value)}}))),
+        errs.ppmail2?R.createElement('div',{className:'mono',style:{fontSize:11,color:'var(--rs)',marginTop:8}},'! '+t('ok_pp')):null,
+        Object.keys(errs).length?R.createElement('div',{className:'mono',style:{fontSize:11,color:'var(--rs)',marginTop:10}},'! '+t('ok_missing')):null,
+        R.createElement('div',{style:{marginTop:18}},R.createElement(Btn,{variant:'au',onClick:next},t('co_next')))):null,
+
+    step===2?R.createElement(Fragment,null,
+      R.createElement(Section,null,
+        R.createElement('div',{style:{display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:10,marginBottom:12}},
+          R.createElement('div',{className:'mono',style:{fontSize:11,letterSpacing:'.18em',color:'var(--tl)'}},R.createElement(Bracket,{c:'--tl'},t('ledger'))),
+          R.createElement('div',{className:'mono',style:{fontSize:10.5,color:'#6d7691'}},t('draft')+': '+draft+' · '+t('sess')+': '+sess)),
+        items.map(function(i,k){var h=hashHex(i.id+i.qty+total+k,32);
+          return R.createElement('div',{key:k,style:{display:'flex',gap:10,alignItems:'center',padding:'8px 0',borderBottom:'1px solid var(--line)'}},
+            R.createElement('span',{className:'mono',style:{fontSize:10,color:'#5d6579',width:24}},String(k+1).padStart(2,'0')),
+            R.createElement('span',{style:{flex:1,fontSize:12.5}},i.qty+' × '+i.name),
+            R.createElement('span',{className:'mono',style:{fontSize:10,color:'#2f6b58',maxWidth:220,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}},h),
+            R.createElement('span',{className:'mono',style:{fontSize:12,color:'var(--au)',width:80,textAlign:'right'}},'€ '+(i.price*i.qty).toFixed(2))})}),
+        R.createElement('div',{style:{display:'flex',justifyContent:'space-between',marginTop:12}},
+          R.createElement('span',{className:'mono',style:{letterSpacing:'.12em'}},t('total')),
+          R.createElement('span',{className:'mono',style:{fontSize:18,fontWeight:700,color:'var(--au)'}},'€ '+total.toFixed(2))),
+        R.createElement('div',{className:'mono',style:{fontSize:10,color:'#6d7691',marginTop:8,wordBreak:'break-all'}},t('checksum')+': '+hashHex(items.map(function(i){return i.id+i.qty}).join(''),32).toUpperCase()),
+        R.createElement('div',{className:'mono',style:{fontSize:10,color:'#6d7691',marginTop:4,wordBreak:'break-all'}},t('pgp_prev')+': '+hashHex('pgp'+draft,48).slice(0,48)+'…'),
+        R.createElement(Badge,{c:'--tl',style:{marginTop:12}},'✓ '+t('sign_ok'))),
+      R.createElement(Term,{title:'order-console',style:{marginTop:12},lines:['fp      : '+fp,'draft   : '+draft,'items   : '+items.length,'total   : € '+total.toFixed(2)]}),
+      R.createElement('div',{style:{display:'flex',gap:10,marginTop:14}},
+        R.createElement(Btn,{onClick:back},t('co_back')),R.createElement(Btn,{variant:'au',onClick:next},t('co_pay')))):null,
+
+    step===3?R.createElement(Fragment,null,
+      R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:12}},
+        [['crypto','pm_crypto','pm_crypto_d','--au'],['sepa','pm_sepa','pm_sepa_d','--bl'],['amazon','pm_amz','pm_amz_d','--mg']].map(function(m2){
+          return R.createElement('div',{key:m2[0],className:'card',onClick:function(){setMeth(m2[0])},
+            style:{padding:14,cursor:'pointer',borderColor:meth===m2[0]?'var('+m2[3]+')':'var(--line)'}},
+            R.createElement('div',{style:{display:'flex',alignItems:'center',gap:8}},
+              R.createElement('span',{className:'mono',style:{fontSize:11,letterSpacing:'.14em',color:'var('+m2[3]+')'}},'▚ '+t(m2[1])),
+              meth===m2[0]?R.createElement('span',{className:'mono',style:{marginLeft:'auto',fontSize:10,color:'var(--tl)'}},'●'):null),
+            R.createElement('div',{style:{fontSize:12,color:'#9aa2ba',marginTop:8,lineHeight:1.6}},t(m2[2])))}),
+      ),
+      R.createElement('div',{style:{marginTop:16}},
+        meth==='crypto'?R.createElement(CryptoPanel,{total:total,order:draft}):null,
+        meth==='sepa'?R.createElement(SepaPanel,{total:total,order:draft}):null,
+        meth==='amazon'?R.createElement(AmzPanel,{total:total,order:draft}):null),
+      R.createElement('div',{style:{display:'flex',gap:10,marginTop:16}},
+        R.createElement(Btn,{onClick:back},t('co_back')),
+        R.createElement(Btn,{variant:'tl',onClick:confirm},t('co_conf_btn')))):null,
+
+    step===4&&order?R.createElement(Fragment,null,
+      R.createElement(Section,{style:{borderColor:'#123a30'}},
+        R.createElement('div',{className:'mono',style:{fontSize:12,letterSpacing:'.18em',color:'var(--tl)'}},'✓ '+t('thanks_t')),
+        R.createElement('p',{style:{fontSize:13,color:'#9aa2ba',lineHeight:1.7,margin:'10px 0 14px'}},t('thanks_s')),
+        R.createElement('div',{className:'mono',style:{fontSize:22,fontWeight:700,color:'var(--au)',letterSpacing:'.08em'}},order.code),
+        R.createElement('div',{style:{display:'flex',gap:10,flexWrap:'wrap',marginTop:16}},
+          R.createElement(Btn,{variant:'au',onClick:receipt},t('co_receipt')),
+          R.createElement(Btn,{onClick:function(){window.open(ID.tg,'_blank')}},t('thanks_tg')),
+          R.createElement(Btn,{onClick:function(){nav('/track')}},t('thanks_track')))),
+      R.createElement(Term,{title:'receipt',style:{marginTop:12},lines:['code    : '+order.code,'total   : € '+order.total.toFixed(2),'manifest: '+order.manifest.slice(0,24)+'…','status  : '+order.status]})):null,
+
+    processing?R.createElement('div',{className:'scrim',style:{display:'grid',placeItems:'center'}},
+      R.createElement('div',{className:'card',style:{padding:24,width:'min(420px,90vw)'}},
+        R.createElement('div',{className:'mono',style:{fontSize:12,letterSpacing:'.18em',color:'var(--au)',marginBottom:14}},'> '+t('processing')),
+        ['hash manifest','firma PGP','checksum','ledger','sigillo ordine'].map(function(l,i){
+          return R.createElement('div',{key:i,className:'mono',style:{fontSize:11,color:'#7d8aa8',lineHeight:2,animation:'fd .3s '+(i*0.35)+'s both'}},'▸ '+l+' ... ok')}),
+        R.createElement('div',{className:'progress',style:{marginTop:14}},R.createElement('i',{style:{width:'100%'}})))):null)
+}
+
+/* ============================ FOOTER ============================ */
+function Footer(){
+  var t=useT().t;
+  return R.createElement('footer',{style:{marginTop:60,borderTop:'1px solid var(--line)',paddingTop:28,paddingBottom:40}},
+    R.createElement('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:20}},
+      R.createElement('div',null,
+        R.createElement('div',{className:'mono',style:{fontWeight:700,letterSpacing:'.14em',marginBottom:10}},t('brand')),
+        R.createElement('div',{style:{fontSize:11.5,color:'#6d7691',lineHeight:1.8}},t('tagline')),R.createElement('div',{className:'mono',style:{fontSize:10,color:'#5d6579',marginTop:8}},t('est'))),
+      R.createElement('div',null,
+        R.createElement('div',{className:'lbl'},t('fc')),
+        R.createElement('a',{href:ID.tg,target:'_blank',className:'mono',style:{display:'block',fontSize:11.5,color:'#9aa2ba',padding:'3px 0'}},'Telegram @gustavoeuro'),
+        R.createElement('a',{href:ID.ch,target:'_blank',className:'mono',style:{display:'block',fontSize:11.5,color:'#9aa2ba',padding:'3px 0'}},'Broadcast'),
+        R.createElement('div',{className:'mono',style:{fontSize:11.5,color:'#9aa2ba',padding:'3px 0'}},ID.onion)),
+      R.createElement('div',null,
+        R.createElement('div',{className:'lbl'},t('fn')),
+        [['/','nav_home'],['/quality','nav_quality'],['/trust','nav_trust'],['/faq','nav_faq'],['/track','nav_track'],['/feedback','nav_feedback']].map(function(n){
+          return R.createElement('a',{key:n[0],href:'#'+n[0],className:'mono',style:{display:'block',fontSize:11.5,color:'#9aa2ba',padding:'3px 0'}},t(n[1]))})),
+      R.createElement('div',null,
+        R.createElement('div',{className:'lbl'},t('fl')),
+        [['/privacy','pv_t'],['/terms','tm_t'],['/cookies','ck_t']].map(function(n){
+          return R.createElement('a',{key:n[0],href:'#'+n[0],className:'mono',style:{display:'block',fontSize:11.5,color:'#9aa2ba',padding:'3px 0'}},t(n[1]))}),
+        R.createElement('div',{className:'mono',style:{fontSize:10.5,color:'#5d6579',marginTop:8}},ID.pgp))),
+    R.createElement('div',{className:'mono',style:{marginTop:24,fontSize:10,color:'#4e5568',letterSpacing:'.1em'}},'© '+new Date().getFullYear()+' GUSTAVOEURO · '+t('rights')))
+}
+
+/* ============================ ERROR BOUNDARY ============================ */
+class EB extends Component{
+  constructor(p){super(p);this.state={e:null}}
+  static getDerivedStateFromError(e){return {e:e}}
+  render(){
+    if(this.state.e){
+      return R.createElement('div',{style:{padding:'90px 20px',maxWidth:700,margin:'0 auto'}},
+        R.createElement('div',{className:'mono',style:{color:'var(--rs)',fontSize:12,letterSpacing:'.18em'}},'// COMPONENT ERROR'),
+        R.createElement('div',{className:'mono',style:{fontSize:12,color:'#9aa2ba',marginTop:12,wordBreak:'break-word'}},String(this.state.e&&this.state.e.message||this.state.e)),
+        R.createElement('button',{className:'btn btn-au',style:{marginTop:16},onClick:function(){location.reload()}},'Ricarica'))
+    }
+    return this.props.children
+  }
+}
+
+/* ============================ APP ============================ */
+function App(){
+  var langS=useState(function(){var s=store.get('ge-lang','it');return LANGS.indexOf(s)>=0?s:'it'}),lang=langS[0],setLangS=langS[1];
+  var cartS=useState(function(){var c=store.jget('ge-cart',[]);return Array.isArray(c)?c:[]}),cart=cartS[0],setCart=cartS[1];
+  var routeS=useState(getRoute()),route=routeS[0],setRoute=routeS[1];
+  var drawerS=useState(false),drawer=drawerS[0],setDrawer=drawerS[1];
+  var flashS=useState(false),flash=flashS[0],setFlash=flashS[1];
+
+  useEffect(function(){var h=function(){setRoute(getRoute())};window.addEventListener('hashchange',h);return function(){window.removeEventListener('hashchange',h)}},[]);
+  useEffect(function(){try{document.documentElement.lang=lang}catch(e){}}, [lang]);
+  useEffect(function(){setFlash(true);var i=setTimeout(function(){setFlash(false)},380);return function(){clearTimeout(i)}},[route]);
+  useEffect(function(){if(!location.hash)location.hash='#/';window.scrollTo(0,0)},[route]);
+  useEffect(function(){store.jset('ge-cart',Array.isArray(cart)?cart:[])},[cart]);
+
+  var t=useCallback(function(k){var d=DICT[lang]||DICT.it;return d[k]||DICT.en[k]||DICT.it[k]||k},[lang]);
+
+  function add(id){
+    var p=byId(id);if(!p)return;
+    setCart(function(c){
+      var arr=Array.isArray(c)?c.slice():[];
+      var i=arr.filter(function(x){return x.id===id})[0];
+      if(i){i.qty++}else{arr.push({id:id,qty:1})}
+      return arr
+    });
+    setDrawer(true);
+  }
+  function inc(id){setCart(function(c){return (Array.isArray(c)?c:[]).map(function(x){return x.id===id?Object.assign({},x,{qty:x.qty+1}):x})})}
+  function dec(id){setCart(function(c){return (Array.isArray(c)?c:[]).map(function(x){return x.id===id?Object.assign({},x,{qty:Math.max(1,x.qty-1)}):x})})}
+  function rm(id){setCart(function(c){return (Array.isArray(c)?c:[]).filter(function(x){return x.id!==id})})}
+  function clear(){setCart([])}
+
+  var items=useMemo(function(){
+    return (Array.isArray(cart)?cart:[]).map(function(ci){
+      var p=byId(ci.id);if(!p)return null;
+      return {id:p.id,qty:ci.qty,price:p.price,name:t(p.n),sub:p.kind==='cash'?(p.pieces+' '+t('pcs')+' × '+p.denom+' EUR'):(t('pp_pay')+' € '+p.pay+' → '+t('pp_recv')+' € '+p.recv),
+        kind:p.kind,photo:p.kind==='cash'?photoOf(p.denom).main:PHOTO.fallbacks[0]}
+    }).filter(Boolean)
+  },[cart,lang]);
+
+  var count=items.reduce(function(a,i){return a+i.qty},0);
+
+  var ctx={lang:lang,t:t,setLang:setLangS,onAdd:add};
+
+  var page=null;
+  if(route==='/'||route==='')page=R.createElement(Home,null);
+  else if(route==='/cash')page=R.createElement(Cash,null);
+  else if(route==='/paypal')page=R.createElement(Paypal,null);
+  else if(route==='/quality')page=R.createElement(Quality,null);
+  else if(route==='/trust')page=R.createElement(Trust,null);
+  else if(route==='/faq')page=R.createElement(Faq,null);
+  else if(route==='/track')page=R.createElement(Track,null);
+  else if(route==='/feedback')page=R.createElement(Feedback,null);
+  else if(route==='/privacy')page=R.createElement(Legal,{k:'pv'});
+  else if(route==='/terms')page=R.createElement(Legal,{k:'tm'});
+  else if(route==='/cookies')page=R.createElement(Legal,{k:'ck'});
+  else if(route==='/checkout')page=R.createElement(Checkout,{items:items,clear:clear});
+  else page=R.createElement(Section,null,
+    R.createElement('div',{className:'mono',style:{fontSize:12,color:'var(--rs)'}},'404 · ROTTA NON TROVATA: '+route),
+    R.createElement('div',{style:{marginTop:12}},R.createElement(Btn,{variant:'au',onClick:function(){nav('/')}},'HOME')));
+
+  return R.createElement(LangCtx.Provider,{value:ctx},
+    R.createElement('div',null,
+      R.createElement('div',{className:'bgfx'}),
+      R.createElement('div',{className:'vig'}),
+      flash?R.createElement('div',{className:'routeflash'}):null,
+      R.createElement(Header,{route:route,lang:lang,setLang:setLangS,onCart:function(){setDrawer(true)},count:count}),
+      R.createElement('main',{className:'wrap',style:{maxWidth:1180,margin:'0 auto',padding:'104px 16px 0'}},page),
+      R.createElement(Footer,null),
+      drawer?R.createElement(Drawer,{items:items,onClose:function(){setDrawer(false)},inc:inc,dec:dec,rm:rm,clear:clear}):null,
+      R.createElement('a',{className:'fab btn btn-tl',href:ID.tg,target:'_blank',style:{borderRadius:999,padding:'12px 16px'}},'✈'),
+      R.createElement('div',{className:'marquee',style:{marginTop:40}},
+        R.createElement('div',null,
+          Array.from({length:2}).map(function(_,k){return R.createElement('span',{key:k,className:'mono'},
+            'GRADE AAA+ · UV 100% · SCANNER PASS · FIBRA COTONE · PGP '+ID.pgp+' · '+ID.onion+' · SOL/BTC/LTC 0% FEES · SEPA INSTANT · AMAZON +20% · TOR 3 HOPS · ')})))))
+}
+
+/* ============================ ROOT ============================ */
+function Root(){
+  var bootedS=useState(store.sget('ge-booted','')==='1'),booted=bootedS[0],setBooted=bootedS[1];
+  var inS=useState(store.sget('ge-in','')==='1'),entered=inS[0],setEntered=inS[1];
+  var ctx={lang:'it',t:function(k){return (DICT.it[k]||k)},setLang:function(){}};
+
+  if(!booted){
+    return R.createElement(LangCtx.Provider,{value:ctx},
+      R.createElement(Boot,{onDone:function(){store.sset('ge-booted','1');setBooted(true);if(!location.hash||location.hash==='#/')location.hash='#/';}}))
+  }
+  if(!entered){
+    return R.createElement(LangCtx.Provider,{value:ctx},
+      R.createElement(Gate,{onOk:function(){store.sset('ge-in','1');setEntered(true)}}))
+  }
+  return R.createElement(EB,null,R.createElement(App,null))
+}
+
+try{
+  var rootEl=document.getElementById('root');
+  if(rootEl&&ReactDOM.createRoot){ReactDOM.createRoot(rootEl).render(R.createElement(Root,null))}
+  else if(rootEl&&ReactDOM.render){ReactDOM.render(R.createElement(Root,null),rootEl)}
+  else{window.__GE_ERR('ReactDOM non disponibile.','Controlla i CDN.')}
+  window.__GE_MOUNTED=true;
+  setTimeout(function(){var r=document.getElementById('root');if(r&&r.children.length===0&&window.__GE_ERR){window.__GE_ERR('Root vuoto dopo il mount.','Possibile errore di sintassi nel blocco babel.')}},2500);
+}catch(e){
+  if(window.__GE_ERR)window.__GE_ERR('Eccezione al bootstrap.',String(e&&e.stack||e));
+}
+
+/* service worker */
+if('serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('sw.js').catch(function(){})}
+</script>
+</body>
+</html>
